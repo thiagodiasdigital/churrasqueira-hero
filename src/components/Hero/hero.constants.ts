@@ -16,9 +16,9 @@ export const HERO_CONFIG = {
     // Black reveal: starts fully black, churrasqueira revealed by 15%
     revealStart: 0.0,
     revealEnd: 0.15,
-    // Logo visible during reveal, fades after
-    logoFadeStart: 0.15,
-    logoFadeEnd: 0.25,
+    // Logo fades out BEFORE reveal completes (never over churrasqueira)
+    logoFadeStart: 0.03,
+    logoFadeEnd: 0.12,
     scrollIndicatorFadeEnd: 0.08,
     textFadeStart: 0.8,
     textFadeEnd: 0.95,
