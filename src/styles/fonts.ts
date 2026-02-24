@@ -1,16 +1,13 @@
-import { Montserrat, Inter } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 
-// Montserrat is a variable font — do NOT specify individual weights.
-// Let it load the full weight axis for correct rendering on Chrome/Windows.
 export const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "block",
 });
 
-// Inter is also a variable font.
-export const inter = Inter({
+export const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-playfair",
   display: "block",
 });

@@ -93,18 +93,18 @@ export function Hero() {
       </div>
 
       <noscript>
-        <div className="flex h-screen w-full flex-col items-center justify-end bg-black pb-20">
+        <div className="flex h-screen w-full flex-col items-start justify-end bg-black pb-20">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/sequences/hero/hero-0090.webp"
             alt="Churrasqueira artesanal com fogo aceso"
             className="absolute inset-0 h-full w-full object-cover"
-            />
-          <div className="relative z-10 text-center">
-            <h2 className="text-5xl font-bold text-[#F5F0EB]">
+          />
+          <div className="relative z-10 px-8 text-left md:px-16 lg:px-24">
+            <h2 className="font-[family-name:var(--font-playfair)] text-5xl font-normal text-[#B86B3E]">
               O Fogo que Reúne
             </h2>
-            <p className="mt-4 text-sm uppercase tracking-widest text-[rgba(245,240,235,0.6)]">
+            <p className="mt-4 font-[family-name:var(--font-montserrat)] text-sm font-light uppercase tracking-widest text-[rgba(242,242,242,0.6)]">
               Churrasqueiras artesanais que transformam momentos em memórias
             </p>
           </div>

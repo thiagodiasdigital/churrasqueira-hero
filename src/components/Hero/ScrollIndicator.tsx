@@ -12,7 +12,7 @@ export function ScrollIndicator({ opacity }: ScrollIndicatorProps) {
       aria-hidden={opacity === 0}
     >
       <div className="flex flex-col items-center gap-2">
-        <span className="font-[family-name:var(--font-inter)] text-xs uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
+        <span className="font-[family-name:var(--font-montserrat)] text-xs uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
           Role para descobrir
         </span>
         <svg

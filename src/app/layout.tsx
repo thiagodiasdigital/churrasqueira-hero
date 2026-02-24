@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat, inter } from "@/styles/fonts";
+import { montserrat, playfair } from "@/styles/fonts";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import "./globals.css";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${montserrat.variable} ${inter.variable}`}
+        className={`${montserrat.variable} ${playfair.variable}`}
       >
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

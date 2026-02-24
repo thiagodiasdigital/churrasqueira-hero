@@ -2,22 +2,23 @@
 
 :root {
   --color-bg: #0a0a0a;
-  --color-text-primary: #f5f0eb;
-  --color-text-secondary: rgba(245, 240, 235, 0.6);
-  --color-border-btn: #f5f0eb;
+  --color-text-primary: #f2f2f2;
+  --color-text-secondary: rgba(242, 242, 242, 0.6);
+  --color-border-btn: #f2f2f2;
+  --color-title-copper: #b86b3e;
 }
 
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text-primary);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-montserrat);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-playfair);
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-text-primary);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
