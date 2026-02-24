@@ -105,10 +105,50 @@ export function HeroCanvas({
     const y = Math.floor((canvas.height - drawH) / 2);
 
     // Clear canvas (needed when transitioning to contain — black bars appear)
-    ctx.fillStyle = "#0A0A0A";
+    const bg = "#0A0A0A";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(img, x, y, drawW, drawH);
+
+    // Draw edge-fade gradients when image doesn't fill the full canvas
+    const fadeSize = 120 * (window.devicePixelRatio || 1);
+
+    // Left edge
+    if (x > 0) {
+      const gl = ctx.createLinearGradient(x, 0, x + fadeSize, 0);
+      gl.addColorStop(0, bg);
+      gl.addColorStop(1, "transparent");
+      ctx.fillStyle = gl;
+      ctx.fillRect(x, y, fadeSize, drawH);
+    }
+
+    // Right edge
+    if (x + drawW < canvas.width) {
+      const gr = ctx.createLinearGradient(x + drawW, 0, x + drawW - fadeSize, 0);
+      gr.addColorStop(0, bg);
+      gr.addColorStop(1, "transparent");
+      ctx.fillStyle = gr;
+      ctx.fillRect(x + drawW - fadeSize, y, fadeSize, drawH);
+    }
+
+    // Top edge
+    if (y > 0) {
+      const gt = ctx.createLinearGradient(0, y, 0, y + fadeSize);
+      gt.addColorStop(0, bg);
+      gt.addColorStop(1, "transparent");
+      ctx.fillStyle = gt;
+      ctx.fillRect(x, y, drawW, fadeSize);
+    }
+
+    // Bottom edge
+    if (y + drawH < canvas.height) {
+      const gb = ctx.createLinearGradient(0, y + drawH, 0, y + drawH - fadeSize);
+      gb.addColorStop(0, bg);
+      gb.addColorStop(1, "transparent");
+      ctx.fillStyle = gb;
+      ctx.fillRect(x, y + drawH - fadeSize, drawW, fadeSize);
+    }
   }, [frames, progress, totalFrames, ready]);
 
   return (

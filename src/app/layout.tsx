@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { playfairDisplay, inter } from "@/styles/fonts";
+import { montserrat, inter } from "@/styles/fonts";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import "./globals.css";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
+        className={`${montserrat.variable} ${inter.variable}`}
       >
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

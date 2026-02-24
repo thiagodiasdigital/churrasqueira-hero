@@ -5,27 +5,40 @@ interface HeroOverlayTextProps {
 }
 
 export function HeroOverlayText({ opacity }: HeroOverlayTextProps) {
+  const textPrimary = `rgba(245, 240, 235, ${opacity})`;
+  const textSecondary = `rgba(245, 240, 235, ${opacity * 0.6})`;
+  const borderColor = `rgba(245, 240, 235, ${opacity})`;
+
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-10 flex items-end justify-center pb-20 md:pb-28"
-      style={{ opacity }}
+      className="pointer-events-none absolute inset-0 z-10 grid place-items-end"
+      aria-hidden={opacity === 0}
     >
       <div
-        className="flex max-w-2xl flex-col items-center gap-6 px-6 text-center"
+        className="pointer-events-auto mb-20 w-full max-w-2xl justify-self-center px-6 text-center md:mb-28"
         style={{ pointerEvents: opacity > 0.1 ? "auto" : "none" }}
       >
         <h2
-          className="font-[family-name:var(--font-playfair)] text-4xl font-bold leading-tight text-[var(--color-text-primary)] md:text-5xl lg:text-[72px] lg:leading-[1.1]"
-          style={{ textShadow: "0 2px 30px rgba(0, 0, 0, 0.7)" }}
+          className="font-[family-name:var(--font-inter)] text-4xl font-bold uppercase leading-tight tracking-[0.05em] md:text-5xl lg:text-[72px] lg:leading-[1.1]"
+          style={{ color: textPrimary }}
         >
           O Fogo que Reúne
         </h2>
-        <p className="font-[family-name:var(--font-inter)] text-sm uppercase tracking-[0.15em] text-[var(--color-text-secondary)] md:text-base">
+        <p
+          className="mt-6 font-[family-name:var(--font-inter)] text-sm font-semibold uppercase tracking-[0.15em] md:text-base"
+          style={{ color: textSecondary }}
+        >
           Churrasqueiras artesanais que transformam momentos em memórias
         </p>
         <a
           href="#modelos"
-          className="mt-2 inline-block rounded-full border border-[var(--color-border-btn)] px-8 py-3 font-[family-name:var(--font-inter)] text-xs font-extrabold uppercase tracking-[0.2em] text-[var(--color-text-primary)] transition-all duration-300 hover:bg-[var(--color-text-primary)] hover:text-[var(--color-bg)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-text-primary)] md:w-auto"
+          className="mt-8 inline-block rounded-full px-8 py-3 font-[family-name:var(--font-inter)] text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-[var(--color-text-primary)] hover:text-[var(--color-bg)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-text-primary)] md:w-auto"
+          style={{
+            color: textPrimary,
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderColor: borderColor,
+          }}
         >
           Conheça os Modelos
         </a>
