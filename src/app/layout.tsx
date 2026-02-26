@@ -1,12 +1,28 @@
 import type { Metadata } from "next";
 import { montserrat, playfair } from "@/styles/fonts";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
+import { SchemaScript, schemaLocalBusiness } from "@/lib/schema";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Churrasqueira Hero — O Fogo que Reúne",
+  title: {
+    default: "Mundial Churrasqueiras — Juiz de Fora",
+    template: "%s | Mundial Churrasqueiras",
+  },
   description:
-    "Descubra churrasqueiras artesanais que transformam momentos em memórias ao redor do fogo.",
+    "Churrasqueiras pre-moldadas, projetos sob medida e acessorios para churrasco em Juiz de Fora e regiao. Entrega e instalacao.",
+  openGraph: {
+    title: "Mundial Churrasqueiras — Juiz de Fora",
+    description:
+      "Churrasqueiras pre-moldadas, projetos sob medida e acessorios para churrasco em Juiz de Fora e regiao.",
+    type: "website",
+    locale: "pt_BR",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -16,10 +32,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        <SchemaScript schema={schemaLocalBusiness()} />
+      </head>
       <body
-        className={`${montserrat.variable} ${playfair.variable}`}
+        className={`${montserrat.variable} ${playfair.variable} min-h-screen flex flex-col`}
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

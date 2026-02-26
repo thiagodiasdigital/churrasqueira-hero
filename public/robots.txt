@@ -1,0 +1,21 @@
+# *
+User-agent: *
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Disallow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Disallow: /
+
+# Host
+Host: https://mundialchurrasqueiras.com.br
+
+# Sitemaps
+Sitemap: https://mundialchurrasqueiras.com.br/sitemap.xml
