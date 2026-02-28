@@ -5,7 +5,7 @@ import { Section, CTAWhatsApp } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: `Contato — ${empresa.nome} | Juiz de Fora`,
-  description: `Entre em contato com a ${empresa.nome}. WhatsApp, endereco e horario de funcionamento em Juiz de Fora, MG.`,
+  description: `Entre em contato com a ${empresa.nome}. WhatsApp, endereço e horário de funcionamento em Juiz de Fora, MG.`,
 };
 
 const contactSchema = {
@@ -27,12 +27,12 @@ export default function ContatoPage() {
           Entre em contato com a {empresa.nome}
         </h1>
         <p className="text-texto-secundario text-base md:text-lg leading-relaxed max-w-2xl mb-12">
-          Tire duvidas, solicite orcamento ou agende uma visita ao nosso showroom.
-          Respondemos rapido pelo WhatsApp.
+          Tire dúvidas, solicite orçamento ou agende uma visita ao nosso showroom.
+          Respondemos rápido pelo WhatsApp.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Informacoes */}
+          {/* Informações */}
           <div className="space-y-8">
             {/* WhatsApp */}
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">
@@ -40,19 +40,19 @@ export default function ContatoPage() {
                 WhatsApp
               </h2>
               <p className="text-texto-secundario text-sm mb-4">
-                A forma mais rapida de falar com a gente. Resposta em minutos durante
-                o horario comercial.
+                A forma mais rápida de falar com a gente. Resposta em minutos durante
+                o horário comercial.
               </p>
               <CTAWhatsApp
                 texto="Abrir WhatsApp"
-                mensagem="Ola! Gostaria de mais informacoes sobre churrasqueiras."
+                mensagem="Olá! Gostaria de mais informações sobre churrasqueiras."
               />
             </div>
 
-            {/* Endereco */}
+            {/* Endereço */}
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">
               <h2 className="font-serif font-semibold text-lg text-ambar mb-3">
-                Endereco
+                Endereço
               </h2>
               <address className="not-italic text-texto-secundario text-sm space-y-1">
                 <p>{empresa.endereco.rua}</p>
@@ -102,10 +102,10 @@ export default function ContatoPage() {
               </div>
             </div>
 
-            {/* Horario */}
+            {/* Horário */}
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">
               <h2 className="font-serif font-semibold text-lg text-ambar mb-3">
-                Horario de funcionamento
+                Horário de funcionamento
               </h2>
               <p className="text-sm text-texto-secundario">{empresa.horario}</p>
             </div>
@@ -122,7 +122,7 @@ export default function ContatoPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title={`Localizacao da ${empresa.nome} em Juiz de Fora`}
+                title={`Localização da ${empresa.nome} em Juiz de Fora`}
               />
             </div>
           </div>

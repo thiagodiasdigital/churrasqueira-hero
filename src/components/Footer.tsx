@@ -11,22 +11,22 @@ export default function Footer() {
             {empresa.nome}
           </p>
           <p className="text-sm text-texto-secundario leading-relaxed">
-            Churrasqueiras pre-moldadas, projetos sob medida e acessorios
-            para churrasco em Juiz de Fora e regiao.
+            Churrasqueiras pré-moldadas, projetos sob medida e acessórios
+            para churrasco em Juiz de Fora e região.
           </p>
         </div>
 
         {/* Col 2 — Links */}
         <div>
           <p className="font-serif font-semibold text-sm text-ambar uppercase tracking-wider mb-3">
-            Navegacao
+            Navegação
           </p>
           <nav className="space-y-2">
             {[
-              { href: "/", label: "Inicio" },
+              { href: "/", label: "Início" },
               { href: "/produto/churrasqueira-pre-moldada", label: "Churrasqueiras" },
               { href: "/produto/churrasqueira-sob-medida", label: "Projetos Sob Medida" },
-              { href: "/sobre", label: "Sobre Nos" },
+              { href: "/sobre", label: "Sobre Nós" },
               { href: "/contato", label: "Contato" },
             ].map((link) => (
               <Link
@@ -89,7 +89,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-ambar transition-colors"
             >
-              Agencia Dias Digital
+              Agência Dias Digital
             </a>
           </p>
         </div>

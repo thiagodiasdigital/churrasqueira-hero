@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: "%s | Mundial Churrasqueiras",
   },
   description:
-    "Churrasqueiras pre-moldadas, projetos sob medida e acessorios para churrasco em Juiz de Fora e regiao. Entrega e instalacao.",
+    "Churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco em Juiz de Fora e região. Entrega e instalação.",
   openGraph: {
     title: "Mundial Churrasqueiras — Juiz de Fora",
     description:
-      "Churrasqueiras pre-moldadas, projetos sob medida e acessorios para churrasco em Juiz de Fora e regiao.",
+      "Churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco em Juiz de Fora e região.",
     type: "website",
     locale: "pt_BR",
   },

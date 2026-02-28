@@ -58,7 +58,7 @@ export default async function ProdutoPage({
       <SchemaScript schema={schemaMain} />
       <SchemaScript schema={schemaFaq} />
 
-      {/* H1 + Descricao */}
+      {/* H1 + Descrição */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
@@ -74,10 +74,20 @@ export default async function ProdutoPage({
             <CTAWhatsApp texto={produto.ctaTexto} mensagem={produto.ctaMensagem} />
           </div>
 
-          <div className="">
-            <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl flex items-center justify-center text-texto-muted text-sm">
-              [Foto: {produto.nome}]
-            </div>
+          <div>
+            {produto.imagem ? (
+              <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden">
+                <img
+                  src={produto.imagem}
+                  alt={produto.nome}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl flex items-center justify-center text-texto-muted text-sm">
+                [Foto: {produto.nome}]
+              </div>
+            )}
           </div>
         </div>
       </Section>
@@ -90,7 +100,7 @@ export default async function ProdutoPage({
         </p>
       </Section>
 
-      {/* Modelos / Especificacoes */}
+      {/* Modelos / Especificações */}
       <Section>
         <SectionHeading>{produto.headings.modelos}</SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl mb-8">
@@ -113,7 +123,7 @@ export default async function ProdutoPage({
           Interessado? Fale com a equipe da Mundial
         </h2>
         <p className="text-texto-secundario mb-8 max-w-lg mx-auto">
-          Tire duvidas, consulte disponibilidade e solicite orcamento sem
+          Tire dúvidas, consulte disponibilidade e solicite orçamento sem
           compromisso pelo WhatsApp.
         </p>
         <CTAWhatsApp texto={produto.ctaTexto} mensagem={produto.ctaMensagem} pulse />

@@ -22,26 +22,26 @@ export default function HomePage() {
           ============================================================ */}
       <Section id="autoridade" mesh>
         <SectionHeading
-          sub={`Sao mais de ${empresa.avaliacoesGoogle} avaliacoes positivas no Google. Em Juiz de Fora, quem conhece churrasco conhece a Mundial.`}
+          sub={`São mais de ${empresa.avaliacoesGoogle} avaliações positivas no Google. Em Juiz de Fora, quem conhece churrasco conhece a Mundial.`}
         >
-          Por que a Mundial Churrasqueiras e referencia em Juiz de Fora?
+          Por que a Mundial Churrasqueiras é referência em Juiz de Fora?
         </SectionHeading>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
               titulo: "Qualidade Artesanal",
-              desc: "Cada churrasqueira e montada com materiais selecionados — tijolo refratario, inox e acabamentos que duram decadas.",
+              desc: "Cada churrasqueira é montada com materiais selecionados — tijolo refratário, inox e acabamentos que duram décadas.",
               icone: "\u{1F525}",
             },
             {
-              titulo: "Projeto Tecnico",
-              desc: "Consultoria de fluxo de fumaca, avaliacao do espaco e visualizacao do projeto antes da fabricacao.",
+              titulo: "Projeto Técnico",
+              desc: "Consultoria de fluxo de fumaça, avaliação do espaço e visualização do projeto antes da fabricação.",
               icone: "\u{1F4D0}",
             },
             {
-              titulo: "Entrega e Instalacao",
-              desc: "Da nossa oficina ate sua area gourmet — entregamos e instalamos em Juiz de Fora e cidades da Zona da Mata.",
+              titulo: "Entrega e Instalação",
+              desc: "Da nossa oficina até sua área gourmet — entregamos e instalamos em Juiz de Fora e cidades da Zona da Mata.",
               icone: "\u{1F69A}",
             },
           ].map((pilar, i) => (
@@ -68,9 +68,9 @@ export default function HomePage() {
           ============================================================ */}
       <Section id="produtos">
         <SectionHeading
-          sub="Do tijolinho classico ao vidro moderno — veja o que combina com sua area gourmet."
+          sub="Do tijolinho clássico ao vidro moderno — veja o que combina com sua área gourmet."
         >
-          Qual churrasqueira combina com o seu espaco?
+          Qual churrasqueira combina com o seu espaço?
         </SectionHeading>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,18 +93,18 @@ export default function HomePage() {
               {[
                 {
                   etapa: "01",
-                  titulo: "Consultoria Tecnica",
-                  desc: "Avaliacao do local, medidas e fluxo de fumaca. Entendemos o espaco antes de propor.",
+                  titulo: "Consultoria Técnica",
+                  desc: "Avaliação do local, medidas e fluxo de fumaça. Entendemos o espaço antes de propor.",
                 },
                 {
                   etapa: "02",
                   titulo: "Design Exclusivo",
-                  desc: "Projeto visual com escolha de acabamentos: vidro, inox, tijolinho ou misto. Voce aprova antes de fabricar.",
+                  desc: "Projeto visual com escolha de acabamentos: vidro, inox, tijolinho ou misto. Você aprova antes de fabricar.",
                 },
                 {
                   etapa: "03",
                   titulo: "Entrega Completa",
-                  desc: "Fabricacao, entrega e instalacao profissional. Da oficina ate sua area gourmet pronta.",
+                  desc: "Fabricação, entrega e instalação profissional. Da oficina até sua área gourmet pronta.",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
@@ -125,28 +125,33 @@ export default function HomePage() {
             <div className="mt-8">
               <CTAWhatsApp
                 texto="Quero um Projeto Exclusivo"
-                mensagem="Ola! Gostaria de um projeto de churrasqueira sob medida."
+                mensagem="Olá! Gostaria de um projeto de churrasqueira sob medida."
               />
             </div>
           </div>
 
           {/* Imagem lateral */}
           <div>
-            <div className="aspect-[3/4] bg-fundo-elevado rounded-xl border border-ambar-escuro/15 flex items-center justify-center text-texto-muted text-sm">
-              [Foto: Projeto sob medida entregue]
+            <div className="aspect-[3/4] bg-fundo-elevado rounded-xl border border-ambar-escuro/15 overflow-hidden">
+              <img
+                src="/images/projeto-sob-medida.webp"
+                alt="Projeto de churrasqueira sob medida entregue pela Mundial Churrasqueiras"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
       </Section>
 
       {/* ============================================================
-          REGIOES
+          REGIÕES
           ============================================================ */}
       <Section id="regioes">
         <SectionHeading
           sub="Entregamos e instalamos churrasqueiras em Juiz de Fora e em cidades da Zona da Mata Mineira."
         >
-          Entrega e instalacao em Juiz de Fora e regiao — onde atendemos?
+          Entrega e instalação em Juiz de Fora e região — onde atendemos?
         </SectionHeading>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -160,7 +165,7 @@ export default function HomePage() {
           DEPOIMENTOS
           ============================================================ */}
       <Section id="depoimentos" mesh>
-        <SectionHeading sub={`${empresa.avaliacoesGoogle} avaliacoes no Google`}>
+        <SectionHeading sub={`${empresa.avaliacoesGoogle} avaliações no Google`}>
           O que nossos clientes dizem?
         </SectionHeading>
 
@@ -176,15 +181,15 @@ export default function HomePage() {
           ============================================================ */}
       <Section className="text-center">
         <h2 className="font-serif font-bold text-2xl md:text-4xl text-texto mb-4">
-          Monte sua area gourmet com quem entende
+          Monte sua área gourmet com quem entende
         </h2>
         <p className="text-texto-secundario text-lg mb-8 max-w-xl mx-auto">
-          Da escolha do modelo ate a instalacao — a Mundial cuida de tudo para
-          voce so se preocupar com o tempero.
+          Da escolha do modelo até a instalação — a Mundial cuida de tudo para
+          você só se preocupar com o tempero.
         </p>
         <CTAWhatsApp
           texto="Falar com Especialista"
-          mensagem="Ola! Quero montar minha area gourmet. Pode me ajudar?"
+          mensagem="Olá! Quero montar minha área gourmet. Pode me ajudar?"
           pulse
         />
       </Section>

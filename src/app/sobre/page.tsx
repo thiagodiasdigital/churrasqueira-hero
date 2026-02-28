@@ -5,7 +5,7 @@ import { Section, SectionHeading, CTAWhatsApp } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: `Sobre a ${empresa.nome} — Juiz de Fora, MG`,
-  description: `Conheca a ${empresa.nome}. Churrasqueiras pre-moldadas e projetos sob medida em Juiz de Fora e regiao. Nossa historia, equipe e diferenciais.`,
+  description: `Conheça a ${empresa.nome}. Churrasqueiras pré-moldadas e projetos sob medida em Juiz de Fora e região. Nossa história, equipe e diferenciais.`,
 };
 
 export default function SobrePage() {
@@ -22,7 +22,7 @@ export default function SobrePage() {
             </h1>
 
             <h2 className="font-serif font-semibold text-xl text-ambar mb-4">
-              Quem e a {empresa.nome}?
+              Quem é a {empresa.nome}?
             </h2>
             <p className="text-texto-secundario text-base leading-relaxed mb-8">
               {empresa.historia}
@@ -30,13 +30,18 @@ export default function SobrePage() {
 
             <CTAWhatsApp
               texto="Falar com a Equipe"
-              mensagem="Ola! Gostaria de conhecer mais sobre a Mundial Churrasqueiras."
+              mensagem="Olá! Gostaria de conhecer mais sobre a Mundial Churrasqueiras."
             />
           </div>
 
-          <div className="">
-            <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl flex items-center justify-center text-texto-muted text-sm">
-              [Foto: Equipe ou oficina da Mundial]
+          <div>
+            <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden">
+              <img
+                src="/images/sobre-oficina.webp"
+                alt="Projeto entregue pela equipe da Mundial Churrasqueiras"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -49,15 +54,15 @@ export default function SobrePage() {
           {[
             {
               titulo: "Consultoria primeiro",
-              desc: "Antes de vender, entendemos. Avaliamos seu espaco, medimos, analisamos o fluxo de fumaca e so depois propomos a melhor solucao.",
+              desc: "Antes de vender, entendemos. Avaliamos seu espaço, medimos, analisamos o fluxo de fumaça e só depois propomos a melhor solução.",
             },
             {
-              titulo: "Fabricacao com metodo",
-              desc: "Cada churrasqueira e montada com materiais selecionados: tijolo refratario, inox 430, concreto armado e acabamentos que resistem ao tempo e ao uso.",
+              titulo: "Fabricação com método",
+              desc: "Cada churrasqueira é montada com materiais selecionados: tijolo refratário, inox 430, concreto armado e acabamentos que resistem ao tempo e ao uso.",
             },
             {
-              titulo: "Entrega e pos-venda",
-              desc: "Entregamos, instalamos e acompanhamos. Se precisar de suporte tecnico depois, nossa equipe esta a uma mensagem de distancia.",
+              titulo: "Entrega e pós-venda",
+              desc: "Entregamos, instalamos e acompanhamos. Se precisar de suporte técnico depois, nossa equipe está a uma mensagem de distância.",
             },
           ].map((item, i) => (
             <div key={i} className="">
@@ -75,7 +80,7 @@ export default function SobrePage() {
       {/* Onde estamos */}
       <Section>
         <SectionHeading
-          sub={`Nossa sede fica no bairro Sao Pedro, em Juiz de Fora. Atendemos ${regioes.length} cidades da Zona da Mata Mineira.`}
+          sub={`Nossa sede fica no bairro São Pedro, em Juiz de Fora. Atendemos ${regioes.length} cidades da Zona da Mata Mineira.`}
         >
           Onde estamos?
         </SectionHeading>
@@ -102,12 +107,12 @@ export default function SobrePage() {
         </div>
       </Section>
 
-      {/* Numeros */}
+      {/* Números */}
       <Section mesh className="text-center">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { valor: empresa.churrasqueirasEntregues, label: "Churrasqueiras entregues" },
-            { valor: `${empresa.avaliacoesGoogle}+`, label: "Avaliacoes no Google" },
+            { valor: `${empresa.avaliacoesGoogle}+`, label: "Avaliações no Google" },
             { valor: `${regioes.length}`, label: "Cidades atendidas" },
             { valor: "100%", label: "Projetos sob medida" },
           ].map((stat, i) => (

@@ -13,9 +13,18 @@ export function ProductCard({ produto }: ProductCardProps) {
     >
       {/* Imagem */}
       <div className="relative aspect-[4/3] overflow-hidden bg-fundo-elevado">
-        <div className="absolute inset-0 flex items-center justify-center text-texto-muted text-sm">
-          [Foto: {produto.nomeCurto}]
-        </div>
+        {produto.imagem ? (
+          <img
+            src={produto.imagem}
+            alt={produto.nome}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-texto-muted text-sm">
+            [Foto: {produto.nomeCurto}]
+          </div>
+        )}
         {produto.badge && (
           <span className="absolute top-3 left-3 px-3 py-1 bg-ambar text-fundo text-xs font-sans font-semibold rounded-full">
             {produto.badge}

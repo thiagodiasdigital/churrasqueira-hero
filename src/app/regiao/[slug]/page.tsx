@@ -28,8 +28,8 @@ export async function generateMetadata({
   if (!regiao) return {};
 
   return {
-    title: `Churrasqueira Pre-Moldada em ${regiao.cidade} — Entrega e Instalacao`,
-    description: `Churrasqueiras pre-moldadas com entrega e instalacao em ${regiao.cidade}, ${regiao.estado}. A ${regiao.distancia} de Juiz de Fora. ${empresa.nome}.`,
+    title: `Churrasqueira Pré-Moldada em ${regiao.cidade} — Entrega e Instalação`,
+    description: `Churrasqueiras pré-moldadas com entrega e instalação em ${regiao.cidade}, ${regiao.estado}. A ${regiao.distancia} de Juiz de Fora. ${empresa.nome}.`,
   };
 }
 
@@ -54,34 +54,34 @@ export default async function RegiaoPage({
       <SchemaScript schema={localSchema} />
       <SchemaScript schema={faqSchema} />
 
-      {/* H1 + Descricao localizada */}
+      {/* H1 + Descrição localizada */}
       <Section>
         <div className="max-w-3xl">
           <span className="inline-block px-3 py-1 bg-ambar/10 border border-ambar/30 text-ambar text-xs font-sans font-semibold rounded-full mb-4">
             {regiao.distancia} de Juiz de Fora
           </span>
           <h1 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-texto leading-tight mb-6">
-            Churrasqueira Pre-Moldada em {regiao.cidade} — Entrega e Instalacao
+            Churrasqueira Pré-Moldada em {regiao.cidade} — Entrega e Instalação
           </h1>
           <p className="text-texto-secundario text-base md:text-lg leading-relaxed mb-8">
             {regiao.descricao}
           </p>
           <CTAWhatsApp
             texto={`Atendemos ${regiao.cidade} — fale conosco`}
-            mensagem={`Ola! Sou de ${regiao.cidade} e gostaria de saber mais sobre churrasqueiras.`}
+            mensagem={`Olá! Sou de ${regiao.cidade} e gostaria de saber mais sobre churrasqueiras.`}
           />
         </div>
       </Section>
 
-      {/* Produtos disponiveis */}
+      {/* Produtos disponíveis */}
       <Section mesh>
         <SectionHeading>
           Quais churrasqueiras entregamos em {regiao.cidade}?
         </SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl mb-8">
-          Todos os produtos da Mundial Churrasqueiras estao disponiveis para entrega
-          em {regiao.cidade}. Churrasqueiras pre-moldadas, modelos de vidro, projetos sob
-          medida e acessorios para churrasco. Consulte prazos e condicoes de frete.
+          Todos os produtos da Mundial Churrasqueiras estão disponíveis para entrega
+          em {regiao.cidade}. Churrasqueiras pré-moldadas, modelos de vidro, projetos sob
+          medida e acessórios para churrasco. Consulte prazos e condições de frete.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {produtosDestaque.map((produto) => (
@@ -93,7 +93,7 @@ export default async function RegiaoPage({
       {/* FAQ Local */}
       <Section>
         <SectionHeading>
-          Duvidas sobre churrasqueira em {regiao.cidade}
+          Dúvidas sobre churrasqueira em {regiao.cidade}
         </SectionHeading>
         <div className="max-w-3xl">
           <FAQAccordion items={regiao.faq} />
@@ -107,11 +107,11 @@ export default async function RegiaoPage({
         </h2>
         <p className="text-texto-secundario mb-8 max-w-lg mx-auto">
           A Mundial Churrasqueiras entrega e instala em {regiao.cidade}.
-          Fale com nossa equipe e monte sua area gourmet.
+          Fale com nossa equipe e monte sua área gourmet.
         </p>
         <CTAWhatsApp
-          texto="Solicitar Orcamento"
-          mensagem={`Ola! Sou de ${regiao.cidade} e quero orcar uma churrasqueira.`}
+          texto="Solicitar Orçamento"
+          mensagem={`Olá! Sou de ${regiao.cidade} e quero orçar uma churrasqueira.`}
           pulse
         />
       </Section>
