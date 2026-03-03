@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero/Hero";
 import { empresa, produtos, regioes, depoimentos } from "@/lib/data";
+import { PreMoldadasSection } from "@/components/PreMoldadasSection";
 import {
   Section,
   SectionHeading,
@@ -18,51 +19,9 @@ export default function HomePage() {
       <Hero />
 
       {/* ============================================================
-          AUTORIDADE
+          PRE-MOLDADAS
           ============================================================ */}
-      <Section id="autoridade" mesh>
-        <SectionHeading
-          sub={`São mais de ${empresa.avaliacoesGoogle} avaliações positivas no Google. Em Juiz de Fora, quem conhece churrasco conhece a Mundial.`}
-        >
-          Por que a Mundial Churrasqueiras é referência em Juiz de Fora?
-        </SectionHeading>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              titulo: "Qualidade Artesanal",
-              desc: "Cada churrasqueira é montada com materiais selecionados — tijolo refratário, inox e acabamentos que duram décadas.",
-              icone: "\u{1F525}",
-            },
-            {
-              titulo: "Projeto Técnico",
-              desc: "Consultoria de fluxo de fumaça, avaliação do espaço e visualização do projeto antes da fabricação.",
-              icone: "\u{1F4D0}",
-            },
-            {
-              titulo: "Entrega e Instalação",
-              desc: "Da nossa oficina até sua área gourmet — entregamos e instalamos em Juiz de Fora e cidades da Zona da Mata.",
-              icone: "\u{1F69A}",
-            },
-          ].map((pilar, i) => (
-            <div
-              key={i}
-              className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6"
-            >
-              <span className="text-3xl mb-3 block" aria-hidden="true">
-                {pilar.icone}
-              </span>
-              <h3 className="font-serif font-semibold text-lg text-texto mb-2">
-                {pilar.titulo}
-              </h3>
-              <p className="text-sm text-texto-secundario leading-relaxed">
-                {pilar.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
+      <PreMoldadasSection />
       {/* ============================================================
           PRODUTOS
           ============================================================ */}
@@ -196,3 +155,4 @@ export default function HomePage() {
     </>
   );
 }
+
