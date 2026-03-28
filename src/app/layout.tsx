@@ -1,23 +1,27 @@
-import type { Metadata } from "next";
-import { montserrat, playfair } from "@/styles/fonts";
+﻿import type { Metadata } from "next";
+import { bebas, montserrat } from "@/styles/fonts";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { SchemaScript, schemaLocalBusiness } from "@/lib/schema";
+import { empresa } from "@/lib/data";
+import { siteSettings } from "@/lib/site-settings";
+import { siteConfig } from "@/lib/site-config";
+import { getThemeStyle } from "@/lib/site-theme";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteSettings.siteUrl),
   title: {
-    default: "Mundial Churrasqueiras — Juiz de Fora",
-    template: "%s | Mundial Churrasqueiras",
+    default: `${empresa.nome} — ${empresa.endereco.cidade}`,
+    template: `%s | ${empresa.nome}`,
   },
-  description:
-    "Churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco em Juiz de Fora e região. Entrega e instalação.",
+  description: `${empresa.descricao} Entrega e instalação.`,
   openGraph: {
-    title: "Mundial Churrasqueiras — Juiz de Fora",
-    description:
-      "Churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco em Juiz de Fora e região.",
+    title: `${empresa.nome} — ${empresa.endereco.cidade}`,
+    description: empresa.descricao,
     type: "website",
-    locale: "pt_BR",
+    locale: siteSettings.locale,
+    url: siteSettings.siteUrl,
   },
   robots: {
     index: true,
@@ -36,7 +40,8 @@ export default function RootLayout({
         <SchemaScript schema={schemaLocalBusiness()} />
       </head>
       <body
-        className={`${montserrat.variable} ${playfair.variable} min-h-screen flex flex-col`}
+        className={`${montserrat.variable} ${bebas.variable} min-h-screen flex flex-col`}
+        style={getThemeStyle(siteConfig.theme)}
       >
         <SmoothScrollProvider>
           <main className="flex-1">{children}</main>

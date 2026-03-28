@@ -1,9 +1,10 @@
-/**
- * Schema JSON-LD — Mundial Churrasqueiras
+﻿/**
+ * Schema JSON-LD do site
  * Structured data por tipo de pagina.
  */
 
 import { empresa, type Produto, type FAQItem } from "./data";
+import { siteSettings } from "@/lib/site-settings";
 
 export function schemaLocalBusiness(areaServed: string[] | null = null) {
   const schema: Record<string, unknown> = {
@@ -11,7 +12,7 @@ export function schemaLocalBusiness(areaServed: string[] | null = null) {
     "@type": "LocalBusiness",
     name: empresa.nome,
     description: empresa.descricao,
-    url: "https://mundialchurrasqueiras.com.br",
+    url: siteSettings.siteUrl,
     telephone: `+${empresa.telefoneLimpo}`,
     email: empresa.email,
     address: {
@@ -22,17 +23,23 @@ export function schemaLocalBusiness(areaServed: string[] | null = null) {
       postalCode: empresa.endereco.cep,
       addressCountry: "BR",
     },
-    geo: {
+  };
+
+  if (empresa.endereco.lat !== 0 && empresa.endereco.lng !== 0) {
+    schema.geo = {
       "@type": "GeoCoordinates",
       latitude: empresa.endereco.lat,
       longitude: empresa.endereco.lng,
-    },
-    aggregateRating: {
+    };
+  }
+
+  if (empresa.avaliacoesGoogle > 0) {
+    schema.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: "5.0",
       reviewCount: String(empresa.avaliacoesGoogle),
-    },
-  };
+    };
+  }
 
   if (areaServed) {
     schema.areaServed = areaServed.map((cidade) => ({
@@ -56,7 +63,7 @@ export function schemaProduct(produto: Produto) {
       availability: "https://schema.org/InStock",
       areaServed: {
         "@type": "City",
-        name: "Juiz de Fora",
+        name: empresa.endereco.cidade,
       },
       seller: { "@type": "Organization", name: empresa.nome },
     },
@@ -80,7 +87,7 @@ export function schemaService(produto: Produto) {
     },
     areaServed: {
       "@type": "City",
-      name: "Juiz de Fora",
+      name: empresa.endereco.cidade,
     },
   };
 }
@@ -105,8 +112,8 @@ export function schemaOrganization() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: empresa.nome,
-    url: "https://mundialchurrasqueiras.com.br",
-    logo: "https://mundialchurrasqueiras.com.br/logo-mundial.svg",
+    url: siteSettings.siteUrl,
+    logo: `${siteSettings.siteUrl}${siteSettings.logoPath}`,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: `+${empresa.telefoneLimpo}`,

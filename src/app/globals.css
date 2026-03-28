@@ -6,23 +6,23 @@
 
 :root {
   /* Hero tokens (mantidos) */
-  --color-bg: #0a0a0a;
+  --color-bg: #1A1A1B;
   --color-text-primary: #f2f2f2;
-  --color-text-secondary: rgba(242, 242, 242, 0.6);
-  --color-border-btn: #f2f2f2;
-  --color-title-copper: #b86b3e;
+  --color-text-secondary: #D1D1D1;
+  --color-border-btn: #A64B2A;
+  --color-title-copper: #A64B2A;
 
   /* Paleta do site */
-  --color-fundo: #0A0A0A;
+  --color-fundo: #1A1A1B;
   --color-fundo-card: #1A1A1A;
   --color-fundo-elevado: #242424;
   --color-texto: #F5F0EB;
-  --color-texto-secundario: #A0A0A0;
+  --color-texto-secundario: #D1D1D1;
   --color-texto-muted: #6B6B6B;
-  --color-ambar: #F59E0B;
-  --color-ambar-hover: #D97706;
-  --color-ambar-escuro: #92400E;
-  --color-ambar-claro: #FCD34D;
+  --color-ambar: #A64B2A;
+  --color-ambar-hover: #8D3D22;
+  --color-ambar-escuro: #8D3D22;
+  --color-ambar-claro: #A64B2A;
 }
 
 /* ============================================================
@@ -33,7 +33,7 @@
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text-primary);
   --font-sans: var(--font-montserrat);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-bebas);
 
   /* Cores do site */
   --color-fundo: var(--color-fundo);
@@ -56,11 +56,30 @@ body {
   background: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-weight: 300;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-playfair), Georgia, serif;
+h1, h2, h3 {
+  font-family: var(--font-bebas), "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.05;
+}
+
+p {
+  font-weight: 300;
+  color: var(--color-texto-secundario);
+}
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+a[role="button"],
+a[class*="rounded"] {
+  font-weight: 600;
+  border-radius: 2px !important;
 }
 
 ::selection {

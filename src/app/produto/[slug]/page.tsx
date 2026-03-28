@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { produtos } from "@/lib/data";
+import { empresa, produtos } from "@/lib/data";
 import {
   SchemaScript,
   schemaProduct,
@@ -58,7 +58,6 @@ export default async function ProdutoPage({
       <SchemaScript schema={schemaMain} />
       <SchemaScript schema={schemaFaq} />
 
-      {/* H1 + Descrição */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
@@ -66,7 +65,7 @@ export default async function ProdutoPage({
               {produto.badge}
             </span>
             <h1 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-texto leading-tight mb-6">
-              {produto.nome} em Juiz de Fora
+              {produto.nome} em {empresa.endereco.cidade}
             </h1>
             <p className="text-texto-secundario text-base md:text-lg leading-relaxed mb-8">
               {produto.descricaoLonga}
@@ -92,7 +91,6 @@ export default async function ProdutoPage({
         </div>
       </Section>
 
-      {/* Como escolher */}
       <Section mesh>
         <SectionHeading>{produto.headings.como}</SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl">
@@ -100,7 +98,6 @@ export default async function ProdutoPage({
         </p>
       </Section>
 
-      {/* Modelos / Especificações */}
       <Section>
         <SectionHeading>{produto.headings.modelos}</SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl mb-8">
@@ -109,7 +106,6 @@ export default async function ProdutoPage({
         <SpecTable items={produto.especificacoes} />
       </Section>
 
-      {/* FAQ */}
       <Section mesh>
         <SectionHeading>{produto.headings.faq}</SectionHeading>
         <div className="max-w-3xl">
@@ -117,10 +113,9 @@ export default async function ProdutoPage({
         </div>
       </Section>
 
-      {/* CTA Final */}
       <Section className="text-center">
         <h2 className="font-serif font-bold text-2xl md:text-3xl text-texto mb-4">
-          Interessado? Fale com a equipe da Mundial
+          Interessado? Fale com a equipe da {empresa.nome}
         </h2>
         <p className="text-texto-secundario mb-8 max-w-lg mx-auto">
           Tire dúvidas, consulte disponibilidade e solicite orçamento sem

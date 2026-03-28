@@ -1,6 +1,8 @@
-import { Hero } from "@/components/Hero/Hero";
+﻿import { Hero } from "@/components/Hero/Hero";
 import { empresa, produtos, regioes, depoimentos } from "@/lib/data";
 import { PreMoldadasSection } from "@/components/PreMoldadasSection";
+import { homeContent } from "@/content";
+import { siteSettings } from "@/lib/site-settings";
 import {
   Section,
   SectionHeading,
@@ -11,25 +13,17 @@ import {
 } from "@/components/ui";
 
 export default function HomePage() {
+  const showModelsSection = homeContent.preMoldadas.models.length > 0;
+  const showTestimonials = depoimentos.length > 0 && Boolean(homeContent.testimonials.title);
+
   return (
     <>
-      {/* ============================================================
-          HERO — Componente scroll-driven (Canvas 2D)
-          ============================================================ */}
       <Hero />
+      {showModelsSection ? <PreMoldadasSection /> : null}
 
-      {/* ============================================================
-          PRE-MOLDADAS
-          ============================================================ */}
-      <PreMoldadasSection />
-      {/* ============================================================
-          PRODUTOS
-          ============================================================ */}
       <Section id="produtos">
-        <SectionHeading
-          sub="Do tijolinho clássico ao vidro moderno — veja o que combina com sua área gourmet."
-        >
-          Qual churrasqueira combina com o seu espaço?
+        <SectionHeading sub={homeContent.products.subtitle}>
+          {homeContent.products.title}
         </SectionHeading>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -39,62 +33,33 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ============================================================
-          PROJETOS SOB MEDIDA
-          ============================================================ */}
       <Section id="sob-medida" mesh className="bg-fundo-card">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <SectionHeading>
-              Como funciona um projeto de churrasqueira sob medida?
-            </SectionHeading>
+            <SectionHeading>{homeContent.sobMedida.title}</SectionHeading>
             <div className="space-y-6">
-              {[
-                {
-                  etapa: "01",
-                  titulo: "Consultoria Técnica",
-                  desc: "Avaliação do local, medidas e fluxo de fumaça. Entendemos o espaço antes de propor.",
-                },
-                {
-                  etapa: "02",
-                  titulo: "Design Exclusivo",
-                  desc: "Projeto visual com escolha de acabamentos: vidro, inox, tijolinho ou misto. Você aprova antes de fabricar.",
-                },
-                {
-                  etapa: "03",
-                  titulo: "Entrega Completa",
-                  desc: "Fabricação, entrega e instalação profissional. Da oficina até sua área gourmet pronta.",
-                },
-              ].map((item, i) => (
+              {homeContent.sobMedida.steps.map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-ambar/10 border border-ambar/30 rounded-lg font-serif font-bold text-ambar text-sm">
                     {item.etapa}
                   </span>
                   <div>
-                    <p className="font-serif font-semibold text-texto">
-                      {item.titulo}
-                    </p>
-                    <p className="text-sm text-texto-secundario mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
+                    <p className="font-serif font-semibold text-texto">{item.titulo}</p>
+                    <p className="text-sm text-texto-secundario mt-1 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
             <div className="mt-8">
-              <CTAWhatsApp
-                texto="Quero um Projeto Exclusivo"
-                mensagem="Olá! Gostaria de um projeto de churrasqueira sob medida."
-              />
+              <CTAWhatsApp texto={homeContent.sobMedida.ctaLabel} mensagem={homeContent.sobMedida.ctaMessage} />
             </div>
           </div>
 
-          {/* Imagem lateral */}
           <div>
             <div className="aspect-[3/4] bg-fundo-elevado rounded-xl border border-ambar-escuro/15 overflow-hidden">
               <img
-                src="/images/projeto-sob-medida.webp"
-                alt="Projeto de churrasqueira sob medida entregue pela Mundial Churrasqueiras"
+                src={`/clients/${siteSettings.clientSlug}/products/projeto-sob-medida.webp`}
+                alt={homeContent.sobMedida.imageAlt}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -103,14 +68,9 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ============================================================
-          REGIÕES
-          ============================================================ */}
       <Section id="regioes">
-        <SectionHeading
-          sub="Entregamos e instalamos churrasqueiras em Juiz de Fora e em cidades da Zona da Mata Mineira."
-        >
-          Entrega e instalação em Juiz de Fora e região — onde atendemos?
+        <SectionHeading sub={homeContent.regions.subtitle}>
+          {homeContent.regions.title}
         </SectionHeading>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -120,39 +80,29 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ============================================================
-          DEPOIMENTOS
-          ============================================================ */}
-      <Section id="depoimentos" mesh>
-        <SectionHeading sub={`${empresa.avaliacoesGoogle} avaliações no Google`}>
-          O que nossos clientes dizem?
-        </SectionHeading>
+      {showTestimonials ? (
+        <Section id="depoimentos" mesh>
+          <SectionHeading sub={empresa.avaliacoesGoogle > 0 ? `${empresa.avaliacoesGoogle} avaliações no Google` : null}>
+            {homeContent.testimonials.title}
+          </SectionHeading>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {depoimentos.map((dep, i) => (
-            <TestimonialCard key={i} depoimento={dep} />
-          ))}
-        </div>
-      </Section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {depoimentos.map((dep, i) => (
+              <TestimonialCard key={i} depoimento={dep} />
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
-      {/* ============================================================
-          CTA FINAL
-          ============================================================ */}
       <Section className="text-center">
         <h2 className="font-serif font-bold text-2xl md:text-4xl text-texto mb-4">
-          Monte sua área gourmet com quem entende
+          {homeContent.finalCta.title}
         </h2>
         <p className="text-texto-secundario text-lg mb-8 max-w-xl mx-auto">
-          Da escolha do modelo até a instalação — a Mundial cuida de tudo para
-          você só se preocupar com o tempero.
+          {homeContent.finalCta.description}
         </p>
-        <CTAWhatsApp
-          texto="Falar com Especialista"
-          mensagem="Olá! Quero montar minha área gourmet. Pode me ajudar?"
-          pulse
-        />
+        <CTAWhatsApp texto={homeContent.finalCta.ctaLabel} mensagem={homeContent.finalCta.ctaMessage} pulse />
       </Section>
     </>
   );
 }
-

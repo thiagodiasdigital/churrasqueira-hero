@@ -1,24 +1,11 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
-import preBaby from "../../fotos-site/pre-baby.png";
-import preBabyMini from "../../fotos-site/pre-baby-mini.png";
-import preBalcao from "../../fotos-site/pre-balcao.png";
-import prePredial from "../../fotos-site/pre-predial.png";
-import preTradicional from "../../fotos-site/pre-tradicional.png";
-import preDuo from "../../fotos-site/pre-duo.png";
+import { useEffect, useRef, useState } from "react";
+import { empresa } from "@/lib/data";
+import { homeContent } from "@/content";
 
-const WHATSAPP_HERO_LINK = "https://wa.me/5532999029461";
-
-const MODELOS = [
-  { nome: "COLONIAL BABY 45cm", imagem: preBaby },
-  { nome: "BABY MINI 45cm", imagem: preBabyMini },
-  { nome: "COLONIAL COM BALCÃO 45cm", imagem: preBalcao },
-  { nome: "PREDIAL 65cm", imagem: prePredial },
-  { nome: "COLONIAL 65cm", imagem: preTradicional },
-  { nome: "COLONIAL 55cm", imagem: preDuo },
-] as const;
+const MODELOS = homeContent.preMoldadas.models;
 
 function clamp01(value: number): number {
   return Math.min(1, Math.max(0, value));
@@ -28,7 +15,16 @@ export function PreMoldadasSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [progress, setProgress] = useState(0);
   const rafRef = useRef<number | null>(null);
-  const totalPanels = MODELOS.length + 1;
+  const introPanels = 1;
+  const modelPanels = MODELOS.length;
+  const ctaPanels = 1;
+  const totalPanels = introPanels + modelPanels + ctaPanels;
+  const panelProgress = progress * totalPanels;
+  const introProgress = clamp01(panelProgress);
+  const introTextVisibility = clamp01((1.05 - panelProgress) / 0.15);
+  const activePanel = Math.floor(panelProgress) - introPanels;
+  const isIntro = panelProgress < introPanels;
+  const isModel = activePanel >= 0 && activePanel < modelPanels;
 
   useEffect(() => {
     function updateProgress() {
@@ -63,121 +59,141 @@ export function PreMoldadasSection() {
     };
   }, []);
 
-  const trackStyle = useMemo(
-    () => ({
-      width: `${totalPanels * 100}vw`,
-      transform: `translate3d(-${progress * (totalPanels - 1) * 100}vw, 0, 0)`,
-    }),
-    [progress, totalPanels]
-  );
-
   return (
     <section
       id="pre-moldadas"
       ref={sectionRef}
-      className="relative min-h-0 md:min-h-[300vh] bg-fundo overflow-hidden"
+      className="relative min-h-0 md:min-h-[700vh] bg-fundo"
+      style={{
+        backgroundImage: "url('/images/premoldadas-bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      <div className="sticky top-0 h-screen w-full overflow-hidden hidden md:block">
-        <div className="absolute top-0 left-0 z-20 w-full px-6 md:px-10 lg:px-16 pt-8 md:pt-10 lg:pt-12">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-texto font-serif font-medium text-3xl md:text-4xl lg:text-5xl tracking-[0.01em]">
-              Churrasqueiras Pré-Moldadas
+      <div
+        className="sticky top-0 hidden h-dvh h-[100svh] w-full overflow-hidden md:block"
+        style={{
+          backgroundImage: "url('/images/premoldadas-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute top-0 left-0 z-20 w-full px-6 pt-8 md:px-10 md:pt-10 lg:px-16 lg:pt-12">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-texto font-serif text-3xl font-medium tracking-[0.01em] md:text-4xl lg:text-5xl">
+              {homeContent.preMoldadas.title}
             </h2>
-            <p className="mt-5 text-texto-secundario font-sans font-medium text-base md:text-lg leading-8">
-              Prontas para instalar.
-              <br />
-              Duráveis.
-              <br />
-              Acabamento impecável.
-            </p>
-          </div>
-        </div>
-
-        <div
-          className="flex h-full will-change-transform"
-          style={trackStyle}
-        >
-          {MODELOS.map((item, index) => {
-            const center = index / (totalPanels - 1);
-            const distance = Math.abs(progress - center) * (totalPanels - 1);
-            const fade = clamp01(1 - distance);
-            const opacity = fade;
-            const scale = 0.96 + fade * 0.04;
-
-            return (
-              <article
-                key={item.nome}
-                className="relative h-full w-screen shrink-0 flex items-center justify-center"
-              >
-                <Image
-                  src={item.imagem}
-                  alt={item.nome}
-                  priority={index < 2}
-                  className="h-[76vh] w-auto object-contain select-none pointer-events-none"
-                  sizes="100vw"
-                />
-
-                <div
-                  className="absolute left-10 bottom-10 z-10"
-                  style={{ opacity, transform: `scale(${scale})`, transformOrigin: "left bottom" }}
-                >
-                  <p className="text-texto font-sans font-medium text-lg md:text-xl lg:text-2xl tracking-[0.01em]">
-                    {item.nome}
+            <div className="mt-5 space-y-1 text-base leading-8 text-texto-secundario font-sans font-medium md:text-lg">
+              {homeContent.preMoldadas.introLines.map((line, index) => {
+                const lineReveal = clamp01((introProgress - index * 0.32) / 0.32);
+                const opacity = lineReveal * introTextVisibility;
+                return (
+                  <p
+                    key={line}
+                    style={{
+                      opacity,
+                      transform: `translateY(${(1 - lineReveal) * 10}px)`,
+                    }}
+                  >
+                    {line}
                   </p>
-                </div>
-              </article>
-            );
-          })}
-
-          <div className="h-full w-screen shrink-0 flex items-center justify-center px-6">
-            <div className="text-center">
-              <p className="text-texto font-serif font-medium text-2xl md:text-4xl">
-                Qual modelo combina com seu espaço?
-              </p>
-              <a
-                href={WHATSAPP_HERO_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center justify-center rounded-full border border-texto px-7 py-3 text-texto font-sans font-medium text-sm tracking-[0.08em] transition-colors hover:bg-texto hover:text-fundo"
-              >
-                Receber orientação
-              </a>
+                );
+              })}
             </div>
           </div>
         </div>
+
+        <div className="relative flex h-full w-full items-center justify-center px-6 pt-[clamp(120px,16vh,180px)] md:px-10 lg:px-16">
+          {isIntro ? null : isModel ? (
+            <article className="flex w-full max-w-6xl items-center justify-center gap-[clamp(24px,5vw,88px)]">
+              <div className="w-[min(34vw,420px)] shrink-0 text-left">
+                <p className="text-texto font-sans text-lg font-medium leading-tight tracking-[0.01em] md:text-xl lg:text-2xl">
+                  {MODELOS[activePanel].nome}
+                </p>
+                {"subtitulo" in MODELOS[activePanel] ? (
+                  <p className="mt-1 text-texto font-sans text-lg font-medium leading-tight tracking-[0.01em] md:text-xl lg:text-2xl">
+                    {MODELOS[activePanel].subtitulo}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="relative h-[min(78svh,820px)] w-[min(58vw,860px)]">
+                <Image
+                  src={MODELOS[activePanel].imagem}
+                  alt={MODELOS[activePanel].nome}
+                  loading="eager"
+                  className="pointer-events-none block h-full w-full select-none object-contain"
+                  sizes="100vw"
+                />
+              </div>
+            </article>
+          ) : (
+            <div className="text-center">
+              <p className="text-texto font-serif text-2xl font-medium md:text-4xl">
+                Qual modelo combina com seu espaco?
+              </p>
+              <a
+                href={`${empresa.whatsapp}?text=${encodeURIComponent(homeContent.preMoldadas.ctaMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center justify-center rounded-full border border-texto px-7 py-3 text-texto font-sans text-sm font-medium tracking-[0.08em] transition-colors hover:bg-texto hover:text-fundo"
+              >
+                {homeContent.preMoldadas.ctaLabel}
+              </a>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="md:hidden px-4 py-10">
-        <h2 className="text-texto font-serif font-medium text-3xl tracking-[0.01em]">
-          Churrasqueiras Pré-Moldadas
+      <div className="px-4 py-10 md:hidden">
+        <h2 className="text-texto font-serif text-3xl font-medium tracking-[0.01em]">
+          {homeContent.preMoldadas.title}
         </h2>
         <p className="mt-4 text-texto-secundario font-sans font-medium leading-8">
-          Prontas para instalar.
-          <br />
-          Duráveis.
-          <br />
-          Acabamento impecável.
+          {homeContent.preMoldadas.introLines.map((line, index) => (
+            <span key={line}>
+              {index > 0 ? <br /> : null}
+              {line}
+            </span>
+          ))}
         </p>
 
-        <div className="mt-8 -mx-4 overflow-x-auto snap-x snap-mandatory scroll-smooth">
+        <div className="mt-8 -mx-4 snap-x snap-mandatory overflow-x-auto scroll-smooth">
           <div className="flex">
             {MODELOS.map((item, index) => (
               <article
                 key={item.nome}
                 className="relative min-w-full snap-center px-4"
               >
-                <div className="relative h-[72vh] flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={item.imagem}
-                    alt={item.nome}
-                    priority={index === 0}
-                    className="h-full w-full object-contain select-none pointer-events-none"
-                    sizes="100vw"
-                  />
+                <div className="relative flex h-[76vh] items-center justify-center overflow-hidden">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={item.imagem}
+                      alt={item.nome}
+                      priority={index === 0}
+                      className="h-full w-full object-contain select-none pointer-events-none"
+                      sizes="100vw"
+                    />
+                  </div>
                   <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/70 to-transparent" />
-                  <p className="absolute left-6 bottom-6 text-texto font-sans font-medium text-base tracking-[0.01em]">
-                    {item.nome}
-                  </p>
+                  {"subtitulo" in item ? (
+                    <div className="absolute inset-x-0 bottom-6 text-center">
+                      <p className="text-texto font-sans font-medium text-base tracking-[0.01em]">
+                        {item.nome}
+                      </p>
+                      <p className="text-texto font-sans font-medium text-base tracking-[0.01em]">
+                        {item.subtitulo}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="absolute left-6 bottom-6">
+                      <p className="text-texto font-sans font-medium text-base tracking-[0.01em]">
+                        {item.nome}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
@@ -185,19 +201,20 @@ export function PreMoldadasSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <p className="text-texto font-serif font-medium text-2xl leading-snug">
-            Qual modelo combina com seu espaço?
+          <p className="text-texto font-serif text-2xl font-medium leading-snug">
+            Qual modelo combina com seu espaco?
           </p>
           <a
-            href={WHATSAPP_HERO_LINK}
+            href={`${empresa.whatsapp}?text=${encodeURIComponent(homeContent.preMoldadas.ctaMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-full border border-texto px-6 py-3 text-texto font-sans font-medium text-sm tracking-[0.08em]"
+            className="mt-6 inline-flex items-center justify-center rounded-full border border-texto px-6 py-3 text-texto font-sans text-sm font-medium tracking-[0.08em]"
           >
-            Receber orientação
+            {homeContent.preMoldadas.ctaLabel}
           </a>
         </div>
       </div>
     </section>
   );
 }
+

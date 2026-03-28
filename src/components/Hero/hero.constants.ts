@@ -1,6 +1,7 @@
+﻿import { siteSettings } from "@/lib/site-settings";
+
 export const HERO_CONFIG = {
   totalFrames: 90,
-  basePath: "/sequences/hero/hero-",
   extension: ".webp",
   canvasWidth: 1456,
   canvasHeight: 1080,
@@ -13,10 +14,8 @@ export const HERO_CONFIG = {
   },
   criticalFrames: [0, 44, 89],
   overlays: {
-    // Black reveal: starts fully black, churrasqueira revealed by 15%
     revealStart: 0.0,
     revealEnd: 0.15,
-    // Logo fades out BEFORE reveal completes (never over churrasqueira)
     logoFadeStart: 0.03,
     logoFadeEnd: 0.12,
     scrollIndicatorFadeEnd: 0.08,
@@ -25,7 +24,39 @@ export const HERO_CONFIG = {
   },
 } as const;
 
-export function getFramePath(index: number): string {
+export type HeroVariant = "desktop" | "mobile";
+
+function getClientHeroBasePath(variant: HeroVariant) {
+  if (variant === "mobile") {
+    return `/clients/${siteSettings.clientSlug}/hero/mobile/hero-`;
+  }
+
+  return `/clients/${siteSettings.clientSlug}/hero/hero-`;
+}
+
+function getLegacyHeroBasePath() {
+  return "/sequences/hero/hero-";
+}
+
+export function getFrameCandidates(index: number, variant: HeroVariant = "desktop"): string[] {
   const num = String(index + 1).padStart(4, "0");
-  return `${HERO_CONFIG.basePath}${num}${HERO_CONFIG.extension}`;
+  const fileName = `${num}${HERO_CONFIG.extension}`;
+
+  if (siteSettings.clientSlug === "mundial") {
+    return [`${getLegacyHeroBasePath()}${fileName}`];
+  }
+
+  if (variant === "mobile") {
+    return [
+      `${getClientHeroBasePath("mobile")}${fileName}`,
+      `${getClientHeroBasePath("desktop")}${fileName}`,
+      `${getLegacyHeroBasePath()}${fileName}`,
+    ];
+  }
+
+  return [`${getClientHeroBasePath("desktop")}${fileName}`, `${getLegacyHeroBasePath()}${fileName}`];
+}
+
+export function getFramePath(index: number, variant: HeroVariant = "desktop"): string {
+  return getFrameCandidates(index, variant)[0];
 }

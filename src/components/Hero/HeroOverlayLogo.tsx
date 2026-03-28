@@ -1,9 +1,9 @@
-"use client";
-
+﻿"use client";
+import { empresa } from "@/lib/data";
+import { siteSettings } from "@/lib/site-settings";
 interface HeroOverlayLogoProps {
   opacity: number;
 }
-
 export function HeroOverlayLogo({ opacity }: HeroOverlayLogoProps) {
   return (
     <div
@@ -11,10 +11,9 @@ export function HeroOverlayLogo({ opacity }: HeroOverlayLogoProps) {
       style={{ opacity }}
       aria-hidden={opacity === 0}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/logo-mundial.svg"
-        alt="Mundial Churrasqueiras"
+        src={siteSettings.logoPath}
+        alt={empresa.nome}
         className="h-[70vh] w-auto max-w-[90vw] object-contain"
         style={{
           filter: "drop-shadow(0 2px 20px rgba(0, 0, 0, 0.6))",

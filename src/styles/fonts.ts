@@ -1,13 +1,15 @@
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Montserrat } from "next/font/google";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ["300", "600"],
   variable: "--font-montserrat",
   display: "block",
 });
 
-export const playfair = Playfair_Display({
+export const bebas = Bebas_Neue({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: "400",
+  variable: "--font-bebas",
   display: "block",
 });

@@ -1,13 +1,14 @@
-"use client";
+﻿"use client";
+
+import { empresa } from "@/lib/data";
+import { homeContent } from "@/content";
 
 interface HeroOverlayTextProps {
   opacity: number;
 }
 
 export function HeroOverlayText({ opacity }: HeroOverlayTextProps) {
-  // Cobre queimado / terracota para o titulo
   const titleColor = `rgba(184, 107, 62, ${opacity})`;
-  // Off-white perolado para subtitulo e botao
   const textColor = `rgba(242, 242, 242, ${opacity})`;
   const textSecondary = `rgba(242, 242, 242, ${opacity * 0.6})`;
   const borderColor = `rgba(242, 242, 242, ${opacity})`;
@@ -25,16 +26,18 @@ export function HeroOverlayText({ opacity }: HeroOverlayTextProps) {
           className="font-[family-name:var(--font-playfair)] text-4xl font-normal leading-[1.1] tracking-normal md:text-5xl lg:text-[72px]"
           style={{ color: titleColor }}
         >
-          O Fogo que Reúne
+          {homeContent.hero.title}
         </h2>
         <p
           className="mt-6 font-[family-name:var(--font-montserrat)] text-sm font-light uppercase tracking-[0.15em] md:text-base"
           style={{ color: textSecondary }}
         >
-          Churrasqueiras artesanais que transformam momentos em memórias
+          {homeContent.hero.subtitle}
         </p>
         <a
-          href="https://wa.me/5532999029461" target="_blank" rel="noopener noreferrer"
+          href={`${empresa.whatsapp}?text=${encodeURIComponent(homeContent.hero.ctaMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-8 inline-block rounded-full px-8 py-3 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-[var(--color-text-primary)] hover:text-[var(--color-bg)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-text-primary)]"
           style={{
             color: textColor,
@@ -43,9 +46,10 @@ export function HeroOverlayText({ opacity }: HeroOverlayTextProps) {
             borderColor: borderColor,
           }}
         >
-          Fale com um Consultor
+          {homeContent.hero.ctaLabel}
         </a>
       </div>
     </div>
   );
 }
+
