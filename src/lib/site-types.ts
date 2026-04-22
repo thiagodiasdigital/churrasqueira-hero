@@ -41,6 +41,7 @@ export interface Produto {
   descricaoLonga: string;
   badge: string;
   imagem: string;
+  cardImagePosition?: string;
   cardCtaTexto?: string;
   ctaTexto: string;
   ctaMensagem: string;

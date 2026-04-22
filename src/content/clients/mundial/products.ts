@@ -86,6 +86,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Feita para quem quer mais capacidade, mais controle de calor e uma presença marcante na área gourmet. A churrasqueira a bafo de tambor 200L entrega preparo uniforme, sabor intenso e estrutura robusta para um churrasco de respeito. Ideal para reunir mais pessoas, assar com eficiência e transformar qualquer encontro em uma experiência completa.`,
     badge: "Potência e Presença no Churrasco",
     imagem: "/images/bafo-preta.png",
+    cardImagePosition: "82% center",
     cardCtaTexto: "Quero mais potência no meu churrasco →",
     ctaTexto: "Quero mais potência no meu churrasco →",
     ctaMensagem:
@@ -224,6 +225,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Compacta no tamanho, gigante no desempenho. Com estrutura em alumínio fundido e sistema a bafo, você garante preparo uniforme, carne suculenta e muito mais controle no churrasco. Ideal para quem quer eficiência, durabilidade e um resultado que impressiona.`,
     badge: "Compacta e Potente",
     imagem: "/images/bafo-aluminio-final.png",
+    cardImagePosition: "center 42%",
     cardCtaTexto: "Quero praticidade com resultado →",
     ctaTexto: "Quero praticidade com resultado →",
     ctaMensagem:
@@ -272,6 +274,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Para quem valoriza o ritual do churrasco de verdade. O Kit Fogo de Chão com Espeto + Braseiro entrega preparo rústico, visual marcante e mais controle sobre o fogo para assar com autenticidade. Ideal para criar uma experiência diferenciada, com presença, sabor e aquele estilo campeiro que chama atenção.`,
     badge: "Estilo Raiz do Churrasco",
     imagem: "/images/fogo-chao.png",
+    cardImagePosition: "center 40%",
     cardCtaTexto: "Quero esse estilo no meu churrasco →",
     ctaTexto: "Quero esse estilo no meu churrasco →",
     ctaMensagem:
@@ -315,6 +318,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Prática para transportar, fácil de posicionar e pronta para acompanhar qualquer ocasião. A churrasqueira móvel com rodas une mobilidade, bom espaço de preparo e uso descomplicado para quem quer fazer um churrasco sem esforço. Ideal para áreas externas, reuniões em família e momentos em que praticidade faz toda a diferença.`,
     badge: "Mobilidade e Praticidade",
     imagem: "/images/vermelha.png",
+    cardImagePosition: "center 42%",
     cardCtaTexto: "Quero mais praticidade no churrasco →",
     ctaTexto: "Quero mais praticidade no churrasco →",
     ctaMensagem:
@@ -358,6 +362,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Mais espaço para preparar tudo de uma vez, sem perder o controle do calor. Com estrutura em alumínio fundido e sistema a bafo, você garante carne suculenta, assada por igual e com sabor intenso. Perfeita para reunir família e amigos com praticidade e resultado profissional.`,
     badge: "Churrasco Para Família e Amigos",
     imagem: "/images/bafo-aluminio(1).png",
+    cardImagePosition: "center 42%",
     cardCtaTexto: "Quero elevar meu churrasco →",
     ctaTexto: "Quero elevar meu churrasco →",
     ctaMensagem:
@@ -401,6 +406,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `Compacta por fora, potente por dentro. Com sistema a bafo e saída de fumaça, você tem controle total do calor e do sabor, mesmo em espaços pequenos. Ideal para quem quer praticidade sem abrir mão de um churrasco bem feito.`,
     badge: "Sabor Defumado Profissional",
     imagem: "/images/bafinho(1).png",
+    cardImagePosition: "center 38%",
     cardCtaTexto: "Garantir a minha agora →",
     ctaTexto: "Garantir a minha agora →",
     ctaMensagem:
@@ -444,6 +450,7 @@ export const produtos: Produto[] = [
     descricaoLonga: `O calor se mantém estável, o sabor fica mais intenso. Feita em cerâmica (barro), essa churrasqueira entrega um preparo mais uniforme e um toque defumado que faz diferença no resultado final. Com 52cm x 90cm, é ideal para quem busca tradição, eficiência térmica e um churrasco com identidade.`,
     badge: "Sabor Rústico e Autêntico",
     imagem: "/images/bafo-barro.png",
+    cardImagePosition: "center 42%",
     cardCtaTexto: "Quero um churrasco de verdade →",
     ctaTexto: "Quero um churrasco de verdade →",
     ctaMensagem:
