@@ -3,21 +3,32 @@ import type { Produto } from "@/lib/data";
 
 interface ProductCardProps {
   produto: Produto;
+  imageFit?: "cover" | "contain";
 }
 
-export function ProductCard({ produto }: ProductCardProps) {
+export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
+  const useContainedImage = imageFit === "contain";
+
   return (
     <Link
       href={`/produto/${produto.slug}`}
       className="group block bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden hover:border-ambar/40 transition-all duration-300"
     >
       {/* Imagem */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-fundo-elevado">
+      <div
+        className={`relative aspect-[4/3] overflow-hidden bg-fundo-elevado ${
+          useContainedImage ? "flex items-center justify-center p-4 sm:p-5 md:p-6" : ""
+        }`}
+      >
         {produto.imagem ? (
           <img
             src={produto.imagem}
             alt={produto.nome}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className={
+              useContainedImage
+                ? "max-w-full max-h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500"
+                : "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            }
             loading="lazy"
           />
         ) : (
@@ -41,7 +52,7 @@ export function ProductCard({ produto }: ProductCardProps) {
           {produto.descricaoCurta}
         </p>
         <span className="inline-block mt-3 text-sm font-sans font-semibold text-ambar group-hover:translate-x-1 transition-transform">
-          Ver detalhes &rarr;
+          {produto.cardCtaTexto ?? "Ver detalhes \u2192"}
         </span>
       </div>
     </Link>

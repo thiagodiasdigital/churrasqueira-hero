@@ -6,7 +6,7 @@ import { siteSettings } from "@/lib/site-settings";
 import {
   Section,
   SectionHeading,
-  ProductCard,
+  ProductCarousel,
   RegionCard,
   TestimonialCard,
   CTAWhatsApp,
@@ -15,6 +15,14 @@ import {
 export default function HomePage() {
   const showModelsSection = homeContent.preMoldadas.models.length > 0;
   const showTestimonials = depoimentos.length > 0 && Boolean(homeContent.testimonials.title);
+  const produtosExcluidosDaSecao = new Set([
+    "churrasqueira-pre-moldada",
+    "churrasqueira-sob-medida",
+    "utensilios-churrasco",
+  ]);
+  const produtosDaSecao = produtos.filter(
+    (produto) => !produtosExcluidosDaSecao.has(produto.slug),
+  );
 
   return (
     <>
@@ -22,15 +30,11 @@ export default function HomePage() {
       {showModelsSection ? <PreMoldadasSection /> : null}
 
       <Section id="produtos">
-        <SectionHeading sub={homeContent.products.subtitle}>
-          {homeContent.products.title}
+        <SectionHeading sub="Modelos a bafo, portáteis, fogo de chão e opções robustas para transformar sua área de lazer com mais personalidade e desempenho.">
+          Churrasqueiras em Juiz de Fora para quem quer mais sabor, praticidade e presença no churrasco
         </SectionHeading>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {produtos.map((produto) => (
-            <ProductCard key={produto.slug} produto={produto} />
-          ))}
-        </div>
+        <ProductCarousel produtos={produtosDaSecao} />
       </Section>
 
       <Section id="sob-medida" mesh className="bg-fundo-card">

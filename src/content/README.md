@@ -19,12 +19,12 @@ O cliente ativo é definido em `site.config.js` pela chave `clientSlug`.
 Exemplo:
 
 ```js
-const clientSlug = "demo";
+const clientSlug = "mundial";
 
 const siteSettings = {
   clientSlug,
-  siteName: "Brasa Prime Gourmet",
-  siteUrl: "https://brasaprimegourmet.com.br",
+  siteName: "Mundial Churrasqueiras",
+  siteUrl: "https://mundialchurrasqueiras.com.br",
   locale: "pt_BR",
   logoPath: `/clients/${clientSlug}/logo/logo.svg`,
 };
@@ -38,7 +38,7 @@ npm run new-client -- casa-forte-gourmet "Casa Forte Gourmet"
 
 O script:
 
-1. copia `src/content/clients/demo`
+1. copia `src/content/clients/mundial`
 2. cria `src/content/clients/<slug>`
 3. registra o novo cliente em `src/content/clients/index.ts`
 4. aplica substituições iniciais de nome e handle
@@ -69,7 +69,7 @@ npm run switch-client -- --list
 Ativar um cliente:
 
 ```bash
-npm run switch-client -- demo
+npm run switch-client -- mundial
 ```
 
 ## Validar cliente
@@ -83,7 +83,7 @@ npm run check-client -- --list
 Validar um cliente:
 
 ```bash
-npm run check-client -- demo
+npm run check-client -- mundial
 ```
 
 O script verifica estrutura mínima, exports esperados, campos essenciais e assets básicos por slug.

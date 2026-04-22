@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Churrasqueira Hero
 
-## Getting Started
+Landing page em Next.js para Mundial Churrasqueiras.
 
-First, run the development server:
+## Stack
+
+- Next.js 16.1.6 (App Router)
+- React 19
+- Tailwind CSS 4
+- TypeScript
+
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Lint
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Producao (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Alias atual: `https://churrasqueira-hero.vercel.app`
+- Dominio configurado: `https://mundialchurrasqueiras.com.br`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Secao Pre-Moldadas (estado atual)
 
-## Deploy on Vercel
+Componente principal: `src/components/PreMoldadasSection.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Fluxo desktop (scroll vertical com secao sticky)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A secao `#pre-moldadas` usa `md:min-h-[700vh]` e container interno sticky em `100svh`.
+
+A progressao do scroll foi dividida em paineis:
+
+1. Painel de introducao (frases)
+2. 5 paineis de modelos
+3. 1 painel final de CTA
+
+### Sequencia visual no desktop
+
+1. Entrando na secao, as frases aparecem progressivamente com o scroll:
+   - `Prontas para instalar.`
+   - `Duraveis.`
+   - `Acabamento impecavel.`
+2. Quando inicia a revelacao dos modelos, as 3 frases somem da tela com fade curto.
+3. Cada faixa de scroll mostra 1 card completo (texto + imagem), evitando meio-card, texto cortado ou imagem cortada.
+4. No final aparece o CTA:
+   - `Qual modelo combina com seu espaco?`
+   - Botao `Receber orientacao` para `https://wa.me/5532999029461`
+
+### Modelos (ordem atual)
+
+1. `COLONIAL BABY 45cm`
+2. `BABY MINI 45cm`
+3. `COLONIAL COM BALCAO 45cm`
+4. `PREDIAL 65cm`
+5. `COLONIAL 55cm` + subtitulo `COLONIAL 65cm`
+
+### Assets utilizados na secao
+
+Origem: `assets-source/mundial/pre-moldadas`
+
+- `baby-45cm.png`
+- `mini-baby.png`
+- `com-balcao-45cm.png`
+- `predial.png`
+- `colonial-65cm-55cm.png`
+
+Background da secao:
+
+- `public/images/premoldadas-bg.png`
+
+### Mobile
+
+No mobile (`md:hidden`) a secao usa swipe horizontal com `snap`.
+
+- 1 slide por viewport
+- Imagem com `object-contain`
+- Gradiente inferior para contraste do texto
+- Altura do slide: `76vh`
+
+### Tamanhos atuais de imagem (desktop)
+
+- Container da imagem: `h-[min(78svh,820px)]`
+- Largura: `w-[min(58vw,860px)]`
+
+## Arquivos principais alterados neste ciclo
+
+- `src/components/PreMoldadasSection.tsx`
+- `README.md`

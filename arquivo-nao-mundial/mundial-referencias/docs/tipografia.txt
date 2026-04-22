@@ -1,0 +1,14 @@
+Diretrizes de Design - Churrasqueira Hero:
+Tipografia de Títulos (H1, H2, H3):
+Fonte: Bebas Neue (Google Fonts).
+Estilo: text-transform: uppercase;
+Espaçamento: letter-spacing: 0.15em; (Isso é crucial para o visual premium).
+Tipografia de Corpo:
+Fonte: Montserrat (Google Fonts).
+Pesos: 300 (Light) para parágrafos e 600 (Semi-bold) para botões.
+Cores:
+Background Principal: #1A1A1B
+Botões e Destaques: #A64B2A (Hover: #8D3D22)
+Texto de Apoio: #D1D1D1
+Efeito Visual:
+Nos botões, use um border-radius: 2px; (quase quadrado) em vez de totalmente arredondado, para manter o aspecto robusto e industrial.

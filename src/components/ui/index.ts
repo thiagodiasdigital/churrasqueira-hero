@@ -2,6 +2,7 @@ export { CTAWhatsApp } from "./CTAWhatsApp";
 export { Section } from "./Section";
 export { SectionHeading } from "./SectionHeading";
 export { ProductCard } from "./ProductCard";
+export { ProductCarousel } from "./ProductCarousel";
 export { TestimonialCard } from "./TestimonialCard";
 export { FAQAccordion } from "./FAQAccordion";
 export { RegionCard } from "./RegionCard";

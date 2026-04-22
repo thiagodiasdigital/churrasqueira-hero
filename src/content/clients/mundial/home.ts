@@ -1,8 +1,8 @@
-import preBaby from "../../../../fotos-site/sem-fundo/baby-45cm.png";
-import preBabyMini from "../../../../fotos-site/sem-fundo/mini-baby.png";
-import preBalcao from "../../../../fotos-site/sem-fundo/com-balcao-45cm.png";
-import prePredial from "../../../../fotos-site/sem-fundo/predial.png";
-import preTradicional from "../../../../fotos-site/sem-fundo/colonial-65cm-55cm.png";
+import preBaby from "../../../../assets-source/mundial/pre-moldadas/baby-45cm.png";
+import preBabyMini from "../../../../assets-source/mundial/pre-moldadas/mini-baby.png";
+import preBalcao from "../../../../assets-source/mundial/pre-moldadas/com-balcao-45cm.png";
+import prePredial from "../../../../assets-source/mundial/pre-moldadas/predial.png";
+import preTradicional from "../../../../assets-source/mundial/pre-moldadas/colonial-65cm-55cm.png";
 import type { HomeContent } from "@/lib/site-types";
 
 export const homeContent: HomeContent = {

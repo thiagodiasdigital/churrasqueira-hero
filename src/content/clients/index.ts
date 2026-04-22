@@ -1,11 +1,7 @@
 ﻿import { siteSettings } from "@/lib/site-settings";
-import * as demo from "./demo";
 import * as mundial from "./mundial";
-import * as influxoRefrigeracao from "./influxo-refrigeracao";
 
 const clients = {
-  influxoRefrigeracao,
-  demo,
   mundial,
 };
 

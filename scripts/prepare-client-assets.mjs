@@ -34,8 +34,8 @@ for (const dir of [clientAssetRoot, logoDir, productsDir, heroDir, documentsDir]
   mkdirSync(dir, { recursive: true });
 }
 
-const sharedLogo = join(projectRoot, "public", "logo-mundial.svg");
-const sharedProjectImage = join(projectRoot, "public", "images", "projeto-sob-medida.webp");
+const sharedLogo = join(projectRoot, "assets-source", "mundial", "client-template", "logo", "logo.svg");
+const sharedProjectImage = join(projectRoot, "assets-source", "mundial", "client-template", "products", "projeto-sob-medida.webp");
 const targetLogo = join(logoDir, "logo.svg");
 const targetProjectImage = join(productsDir, "projeto-sob-medida.webp");
 

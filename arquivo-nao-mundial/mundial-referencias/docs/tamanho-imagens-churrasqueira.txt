@@ -1,0 +1,58 @@
+Aqui está o mapa completo de imagens do projeto:
+
+  ---                                                                                                                                   Imagens do Hero (Sequência Canvas)
+                                                                                                                                        ┌───────────────────┬──────────────────────────────────────────────┬─────────┬──────────────┐
+  │       Slot        │                   Dimensão                   │ Formato │     Qtd      │
+  ├───────────────────┼──────────────────────────────────────────────┼─────────┼──────────────┤
+  │ Hero frames       │ 1456 × 1080 px (~16:15)                      │ WebP    │ 90 arquivos  │
+  ├───────────────────┼──────────────────────────────────────────────┼─────────┼──────────────┤
+  │ Noscript fallback │ 1456 × 1080 px                               │ WebP    │ 1 (frame 90) │
+  ├───────────────────┼──────────────────────────────────────────────┼─────────┼──────────────┤
+  │ Logo overlay      │ SVG vetorial (70vh altura, max 90vw largura) │ SVG     │ 1            │
+  └───────────────────┴──────────────────────────────────────────────┴─────────┴──────────────┘
+
+  Os frames do hero são renderizados em Canvas 2D com DPR do dispositivo, então a resolução de 1456×1080 serve tanto desktop quanto
+  mobile sem necessidade de variantes.
+
+  ---
+  Imagens de Conteúdo (Todas são placeholders hoje)
+
+  ┌────────────────────────┬───────────────┬────────────────────────┬────────────────────────────────┐
+  │          Slot          │ Aspect Ratio  │      Onde aparece      │    Recomendação de tamanho     │
+  ├────────────────────────┼───────────────┼────────────────────────┼────────────────────────────────┤
+  │ Product Cards          │ 4:3           │ Home, Região, Produto  │ 800 × 600 px                   │
+  ├────────────────────────┼───────────────┼────────────────────────┼────────────────────────────────┤
+  │ Produto detalhe        │ 4:3           │ /produto/[slug]        │ 1200 × 900 px (maior destaque) │
+  ├────────────────────────┼───────────────┼────────────────────────┼────────────────────────────────┤
+  │ Projeto sob medida     │ 3:4 (retrato) │ Home, seção Sob Medida │ 900 × 1200 px                  │
+  ├────────────────────────┼───────────────┼────────────────────────┼────────────────────────────────┤
+  │ Sobre (equipe/oficina) │ 4:3           │ /sobre                 │ 1200 × 900 px                  │
+  └────────────────────────┴───────────────┴────────────────────────┴────────────────────────────────┘
+
+  ---
+  Não precisa de tamanho separado para mobile
+
+  O projeto não usa next/image — usa divs com aspect ratio CSS (aspect-[4/3], aspect-[3/4]). O container é responsivo e redimensiona
+  automaticamente. Então:
+
+  - Uma única imagem por slot é suficiente — o CSS cuida do crop/fit
+  - Formato recomendado: WebP (consistente com o hero)
+  - Resolução: basta seguir as dimensões acima (a maior variante) que o CSS escala para baixo em telas menores
+
+  ---
+  Resumo prático
+
+  ┌──────────────────────────────┬────────────────────────────┬────────────┬─────────┐
+  │          Prioridade          │       O que fornecer       │  Tamanho   │ Formato │
+  ├──────────────────────────────┼────────────────────────────┼────────────┼─────────┤
+  │ Product cards (×18 produtos) │ Foto de cada churrasqueira │ 800 × 600  │ WebP    │
+  ├──────────────────────────────┼────────────────────────────┼────────────┼─────────┤
+  │ Produto detalhe (×18)        │ Foto principal ampliada    │ 1200 × 900 │ WebP    │
+  ├──────────────────────────────┼────────────────────────────┼────────────┼─────────┤
+  │ Sob medida (×1)              │ Foto de projeto entregue   │ 900 × 1200 │ WebP    │
+  ├──────────────────────────────┼────────────────────────────┼────────────┼─────────┤
+  │ Sobre (×1)                   │ Foto da equipe ou oficina  │ 1200 × 900 │ WebP    │
+  └──────────────────────────────┴────────────────────────────┴────────────┴─────────┘
+
+  Total: ~38 imagens para substituir todos os placeholders. Quer que eu comece a integrar as fotos que já estão na raiz do projeto (as
+   .jpg não rastreadas pelo git)?

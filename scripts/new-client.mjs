@@ -17,7 +17,7 @@ if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
 
 const projectRoot = process.cwd();
 const clientsRoot = join(projectRoot, "src", "content", "clients");
-const templateSlug = "demo";
+const templateSlug = "mundial";
 const templateDir = join(clientsRoot, templateSlug);
 const targetDir = join(clientsRoot, slug);
 const clientsIndexPath = join(clientsRoot, "index.ts");
@@ -36,10 +36,10 @@ cpSync(templateDir, targetDir, { recursive: true });
 
 const compactSlug = slug.replace(/-/g, "");
 const replacements = [
-  [/Brasa Prime Gourmet/g, displayName],
-  [/Brasa Prime/g, displayName],
-  [/brasaprimegourmet/g, compactSlug],
-  [/@brasaprimegourmet/g, `@${compactSlug}`],
+  [/Mundial Churrasqueiras/g, displayName],
+  [/Mundial/g, displayName],
+  [/mundialchurrasqueiras/g, compactSlug],
+  [/@mundial\.churrasqueiras/g, `@${compactSlug}`],
 ];
 
 rewriteFiles(targetDir, replacements);
