@@ -19,17 +19,17 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
       <div
         className={`relative overflow-hidden bg-fundo-elevado ${
           useContainedImage
-            ? "aspect-[4/3] md:h-[250px] md:aspect-auto"
+            ? "aspect-[5/4] md:h-[220px] md:aspect-auto"
             : "aspect-[4/3]"
         }`}
       >
         {produto.imagem ? (
           useContainedImage ? (
-            <div className="absolute inset-0 p-4 sm:p-5 md:p-4">
+            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5 md:p-4">
               <img
                 src={produto.imagem}
                 alt={produto.nome}
-                className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                className="h-full w-auto max-w-[72%] object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] md:max-w-[240px]"
                 style={{ objectPosition: cardImagePosition }}
                 loading="lazy"
               />
