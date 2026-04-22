@@ -82,7 +82,7 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
 
   return (
     <div
-      className="relative"
+      className="relative mx-auto max-w-[1120px]"
       aria-roledescription="carousel"
       aria-label="Churrasqueiras em destaque"
       onMouseEnter={() => setIsPaused(true)}
@@ -90,34 +90,43 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
     >
-      <div className="mb-5 flex items-center justify-end gap-3">
-        <button
-          type="button"
-          onClick={goToPrevious}
-          className="flex h-11 w-11 items-center justify-center rounded-lg border border-ambar/40 bg-fundo-card text-ambar transition-colors hover:border-ambar hover:bg-ambar hover:text-fundo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ambar"
-          aria-label="Ver produto anterior"
-        >
-          <span aria-hidden="true">←</span>
-        </button>
-        <button
-          type="button"
-          onClick={goToNext}
-          className="flex h-11 w-11 items-center justify-center rounded-lg border border-ambar/40 bg-fundo-card text-ambar transition-colors hover:border-ambar hover:bg-ambar hover:text-fundo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ambar"
-          aria-label="Ver próximo produto"
-        >
-          <span aria-hidden="true">→</span>
-        </button>
+      <div className="mb-6 flex items-center justify-between gap-4">
+        <div className="hidden text-xs font-sans font-semibold uppercase tracking-[0.28em] text-texto-secundario/70 md:block">
+          Modelos em destaque
+        </div>
+        <div className="ml-auto flex items-center gap-3">
+          <button
+            type="button"
+            onClick={goToPrevious}
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-ambar/30 bg-fundo-card/90 text-ambar shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-0.5 hover:border-ambar hover:bg-ambar hover:text-fundo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ambar"
+            aria-label="Ver produto anterior"
+          >
+            <span aria-hidden="true" className="text-lg leading-none">
+              &lt;
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={goToNext}
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-ambar/30 bg-fundo-card/90 text-ambar shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-0.5 hover:border-ambar hover:bg-ambar hover:text-fundo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ambar"
+            aria-label="Ver proximo produto"
+          >
+            <span aria-hidden="true" className="text-lg leading-none">
+              &gt;
+            </span>
+          </button>
+        </div>
       </div>
 
       <div
         ref={trackRef}
-        className="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-4 pb-4"
+        className="-mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-2 pb-5 sm:gap-5 lg:gap-6"
       >
         {produtos.map((produto, index) => (
           <div
             key={produto.slug}
             data-carousel-slide
-            className="min-w-[85%] shrink-0 snap-start sm:min-w-[calc((100%-1.5rem)/2)] lg:min-w-[calc((100%-3rem)/3)]"
+            className="min-w-[82%] shrink-0 snap-start sm:min-w-[calc((100%-1.25rem)/2)] lg:min-w-[calc((100%-4rem)/3.35)]"
             aria-label={`Produto ${index + 1} de ${produtos.length}`}
           >
             <ProductCard produto={produto} imageFit="contain" />
@@ -125,12 +134,14 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
         ))}
       </div>
 
-      <div className="mt-2 flex justify-center gap-2" aria-hidden="true">
+      <div className="mt-3 flex justify-center gap-2" aria-hidden="true">
         {produtos.map((produto, index) => (
           <span
             key={produto.slug}
             className={`h-1.5 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-ambar" : "w-2 bg-ambar/30"
+              index === activeIndex
+                ? "w-10 bg-ambar shadow-[0_0_18px_rgba(166,75,42,0.45)]"
+                : "w-2.5 bg-ambar/25"
             }`}
           />
         ))}

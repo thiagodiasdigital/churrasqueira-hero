@@ -12,12 +12,14 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
   return (
     <Link
       href={`/produto/${produto.slug}`}
-      className="group block bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden hover:border-ambar/40 transition-all duration-300"
+      className="group block overflow-hidden rounded-xl border border-ambar-escuro/15 bg-fundo-card shadow-[0_14px_34px_rgba(0,0,0,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-ambar/40 hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
     >
       {/* Imagem */}
       <div
-        className={`relative aspect-[4/3] overflow-hidden bg-fundo-elevado ${
-          useContainedImage ? "flex items-center justify-center p-4 sm:p-5 md:p-6" : ""
+        className={`relative overflow-hidden bg-fundo-elevado ${
+          useContainedImage
+            ? "flex aspect-[16/10] items-center justify-center p-6 sm:p-7 md:p-8"
+            : "aspect-[4/3]"
         }`}
       >
         {produto.imagem ? (
@@ -26,7 +28,7 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
             alt={produto.nome}
             className={
               useContainedImage
-                ? "max-w-full max-h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-500"
+                ? "max-h-[78%] max-w-[88%] object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
                 : "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             }
             loading="lazy"
@@ -37,21 +39,21 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
           </div>
         )}
         {produto.badge && (
-          <span className="absolute top-3 left-3 px-3 py-1 bg-ambar text-fundo text-xs font-sans font-semibold rounded-full">
+          <span className="absolute top-3 left-3 rounded-full border border-ambar/20 bg-ambar px-3 py-1 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-fundo">
             {produto.badge}
           </span>
         )}
       </div>
 
       {/* Texto */}
-      <div className="p-5">
-        <h3 className="font-serif font-semibold text-lg text-texto group-hover:text-ambar transition-colors">
+      <div className="p-5 md:p-6">
+        <h3 className="font-serif text-lg font-semibold leading-tight text-texto transition-colors group-hover:text-ambar md:text-[1.35rem]">
           {produto.nome}
         </h3>
-        <p className="mt-2 text-sm text-texto-secundario leading-relaxed line-clamp-2">
+        <p className="mt-3 min-h-[3.25rem] text-sm leading-relaxed text-texto-secundario line-clamp-2">
           {produto.descricaoCurta}
         </p>
-        <span className="inline-block mt-3 text-sm font-sans font-semibold text-ambar group-hover:translate-x-1 transition-transform">
+        <span className="mt-4 inline-block text-sm font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1">
           {produto.cardCtaTexto ?? "Ver detalhes \u2192"}
         </span>
       </div>
