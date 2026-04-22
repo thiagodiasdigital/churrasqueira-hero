@@ -17,19 +17,17 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
     >
       {/* Imagem */}
       <div
-        className={`relative overflow-hidden bg-fundo-elevado ${
-          useContainedImage
-            ? "aspect-[5/4] md:h-[220px] md:aspect-auto"
-            : "aspect-[4/3]"
+        className={`relative ${
+          useContainedImage ? "px-4 pt-4 md:px-5 md:pt-5" : "overflow-hidden"
         }`}
       >
         {produto.imagem ? (
           useContainedImage ? (
-            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5 md:p-4">
+            <div className="mx-auto flex h-[220px] w-full max-w-[280px] items-center justify-center overflow-hidden rounded-lg bg-fundo-elevado p-4 md:h-[210px] md:max-w-[250px]">
               <img
                 src={produto.imagem}
                 alt={produto.nome}
-                className="h-full w-auto max-w-[72%] object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] md:max-w-[240px]"
+                className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
                 style={{ objectPosition: cardImagePosition }}
                 loading="lazy"
               />
@@ -43,12 +41,12 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
             />
           )
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-texto-muted text-sm">
+          <div className="flex h-[220px] items-center justify-center rounded-lg bg-fundo-elevado text-sm text-texto-muted">
             [Foto: {produto.nomeCurto}]
           </div>
         )}
         {produto.badge && (
-          <span className="absolute top-3 left-3 rounded-full border border-ambar/20 bg-ambar px-3 py-1 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-fundo">
+          <span className="absolute top-7 left-7 rounded-full border border-ambar/20 bg-ambar px-3 py-1 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-fundo md:top-8 md:left-8">
             {produto.badge}
           </span>
         )}
