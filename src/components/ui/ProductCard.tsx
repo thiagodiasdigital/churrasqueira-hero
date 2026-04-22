@@ -18,7 +18,7 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
       <div
         className={`relative overflow-hidden bg-fundo-elevado ${
           useContainedImage
-            ? "flex aspect-[16/10] items-center justify-center p-6 sm:p-7 md:p-8"
+            ? "aspect-[16/10] p-6 sm:p-7 md:p-8"
             : "aspect-[4/3]"
         }`}
       >
@@ -28,7 +28,7 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
             alt={produto.nome}
             className={
               useContainedImage
-                ? "max-h-[78%] max-w-[88%] object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                ? "absolute inset-0 h-full w-full object-contain object-center p-6 transition-transform duration-500 group-hover:scale-[1.02] sm:p-7 md:p-8"
                 : "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             }
             loading="lazy"
