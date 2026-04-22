@@ -18,13 +18,13 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
       <div
         className={`relative overflow-hidden bg-fundo-elevado ${
           useContainedImage
-            ? "aspect-[16/10]"
+            ? "aspect-[16/10] md:aspect-[16/9]"
             : "aspect-[4/3]"
         }`}
       >
         {produto.imagem ? (
           useContainedImage ? (
-            <div className="absolute inset-0 p-6 sm:p-7 md:p-8">
+            <div className="absolute inset-0 p-4 sm:p-5 md:p-6">
               <img
                 src={produto.imagem}
                 alt={produto.nome}
@@ -53,14 +53,14 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
       </div>
 
       {/* Texto */}
-      <div className="p-5 md:p-6">
-        <h3 className="font-serif text-lg font-semibold leading-tight text-texto transition-colors group-hover:text-ambar md:text-[1.35rem]">
+      <div className="p-4 md:p-5">
+        <h3 className="font-serif text-base font-semibold leading-tight text-texto transition-colors group-hover:text-ambar md:text-[1.2rem]">
           {produto.nome}
         </h3>
-        <p className="mt-3 min-h-[3.25rem] text-sm leading-relaxed text-texto-secundario line-clamp-2">
+        <p className="mt-2.5 min-h-[3rem] text-sm leading-relaxed text-texto-secundario line-clamp-2">
           {produto.descricaoCurta}
         </p>
-        <span className="mt-4 inline-block text-sm font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1">
+        <span className="mt-3 inline-block text-xs font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1 md:text-sm">
           {produto.cardCtaTexto ?? "Ver detalhes \u2192"}
         </span>
       </div>

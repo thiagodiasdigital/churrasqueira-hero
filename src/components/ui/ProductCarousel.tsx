@@ -82,7 +82,7 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
 
   return (
     <div
-      className="relative mx-auto max-w-[1120px]"
+      className="relative mx-auto max-w-[980px]"
       aria-roledescription="carousel"
       aria-label="Churrasqueiras em destaque"
       onMouseEnter={() => setIsPaused(true)}
@@ -126,7 +126,7 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
           <div
             key={produto.slug}
             data-carousel-slide
-            className="min-w-[82%] shrink-0 snap-start sm:min-w-[calc((100%-1.25rem)/2)] lg:min-w-[calc((100%-4rem)/3.35)]"
+            className="min-w-[74%] shrink-0 snap-start sm:min-w-[calc((100%-1.25rem)/2.15)] lg:min-w-[calc((100%-4rem)/3.7)]"
             aria-label={`Produto ${index + 1} de ${produtos.length}`}
           >
             <ProductCard produto={produto} imageFit="contain" />
