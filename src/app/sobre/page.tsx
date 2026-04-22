@@ -45,16 +45,16 @@ export default function SobrePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
           {[
             {
-              titulo: "Diagnóstico com clareza",
-              desc: "Antes de executar, entendemos o ambiente, a demanda do cliente e as condições do sistema para indicar a solução mais adequada.",
+              titulo: "Orientação antes da compra",
+              desc: "Entendemos o espaço, o estilo da área gourmet e o tipo de uso para indicar o modelo mais adequado para cada cliente.",
             },
             {
-              titulo: "Execução técnica",
-              desc: "A instalação, manutenção e higienização são realizadas com foco em desempenho, organização, segurança e acabamento compatível com o local.",
+              titulo: "Fabricação e acabamento",
+              desc: "Cada churrasqueira é preparada com foco em estrutura, acabamento e presença visual para valorizar o ambiente e o uso no dia a dia.",
             },
             {
-              titulo: "Suporte contínuo",
-              desc: "A empresa atende clientes residenciais e empresariais com orientação comercial e técnica para demandas pontuais e rotinas periódicas.",
+              titulo: "Entrega e instalação",
+              desc: "A equipe organiza entrega, montagem e orientação final para que a churrasqueira chegue pronta para transformar o espaço em ponto de encontro.",
             },
           ].map((item, i) => (
             <div key={i}>

@@ -29,7 +29,7 @@ export default function ContatoPage() {
           Entre em contato com a {empresa.nome}
         </h1>
         <p className="text-texto-secundario text-base md:text-lg leading-relaxed max-w-2xl mb-12">
-          Tire dúvidas, solicite orçamento ou agende atendimento técnico. Respondemos rápido pelo WhatsApp durante o horário comercial.
+          Tire dúvidas, solicite orçamento e receba orientação sobre modelos, medidas e instalação. Respondemos rápido pelo WhatsApp durante o horário comercial.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -37,9 +37,9 @@ export default function ContatoPage() {
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">
               <h2 className="font-serif font-semibold text-lg text-ambar mb-3">WhatsApp</h2>
               <p className="text-texto-secundario text-sm mb-4">
-                A forma mais rápida de falar com a equipe para orçamento, instalação, manutenção ou higienização.
+                A forma mais rápida de falar com a equipe para orçamento, disponibilidade, instalação e projetos sob medida.
               </p>
-              <CTAWhatsApp texto="Abrir WhatsApp" mensagem="Olá! Quero falar com a Influxo Refrigeração sobre orçamento." />
+              <CTAWhatsApp texto="Abrir WhatsApp" mensagem="Olá! Quero falar com a Mundial Churrasqueiras sobre orçamento." />
             </div>
 
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">

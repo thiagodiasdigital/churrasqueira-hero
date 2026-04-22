@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!regiao) return {};
 
   return {
-    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Atendimento em climatização`,
-    description: `${empresa.nome} atende ${regiao.cidade} com serviços de climatização, instalação, manutenção e higienização de ar-condicionado.`,
+    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e projetos sob medida`,
+    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalação de churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco.`,
   };
 }
 
@@ -38,16 +38,22 @@ export default async function RegiaoPage({ params }: { params: Promise<{ slug: s
           <span className="inline-block px-3 py-1 bg-ambar/10 border border-ambar/30 text-ambar text-xs font-sans font-semibold rounded-full mb-4">
             {regiao.distancia} de {empresa.endereco.cidade}
           </span>
-          <h1 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-texto leading-tight mb-6">Atendimento em climatização em {regiao.cidade}</h1>
+          <h1 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-texto leading-tight mb-6">
+            Churrasqueiras em {regiao.cidade} com entrega e instalação profissional
+          </h1>
           <p className="text-texto-secundario text-base md:text-lg leading-relaxed mb-8">{regiao.descricao}</p>
-          <CTAWhatsApp texto={`Atendemos ${regiao.cidade} — fale conosco`} mensagem={`Olá! Sou de ${regiao.cidade} e gostaria de saber mais sobre os serviços da ${empresa.nome}.`} />
+          <CTAWhatsApp
+            texto={`Atendemos ${regiao.cidade} — fale conosco`}
+            mensagem={`Olá! Sou de ${regiao.cidade} e gostaria de saber mais sobre as churrasqueiras da ${empresa.nome}.`}
+          />
         </div>
       </Section>
 
       <Section mesh>
-        <SectionHeading>Quais serviços a {empresa.nome} atende em {regiao.cidade}?</SectionHeading>
+        <SectionHeading>Quais opções a {empresa.nome} atende em {regiao.cidade}?</SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl mb-8">
-          A {empresa.nome} atende {regiao.cidade} com serviços de instalação, manutenção preventiva, manutenção corretiva e higienização técnica de ar-condicionado para residências, comércios e empresas.
+          A {empresa.nome} atende {regiao.cidade} com churrasqueiras pré-moldadas, modelos a bafo, opções portáteis,
+          kits fogo de chão, projetos sob medida e acessórios para áreas gourmet residenciais e comerciais.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {produtosDestaque.map((produto) => (
@@ -66,9 +72,11 @@ export default async function RegiaoPage({ params }: { params: Promise<{ slug: s
       ) : null}
 
       <Section className="text-center" mesh>
-        <h2 className="font-serif font-bold text-2xl md:text-3xl text-texto mb-4">Precisa de atendimento em {regiao.cidade}?</h2>
+        <h2 className="font-serif font-bold text-2xl md:text-3xl text-texto mb-4">
+          Quer montar sua área gourmet em {regiao.cidade}?
+        </h2>
         <p className="text-texto-secundario mb-8 max-w-lg mx-auto">
-          Fale com a equipe da {empresa.nome} para solicitar orçamento, tirar dúvidas e avaliar a melhor solução para o seu ambiente.
+          Fale com a equipe da {empresa.nome} para solicitar orçamento, comparar modelos e definir a melhor solução para o seu espaço.
         </p>
         <CTAWhatsApp texto="Solicitar Orçamento" mensagem={`Olá! Sou de ${regiao.cidade} e quero solicitar um orçamento.`} pulse />
       </Section>
