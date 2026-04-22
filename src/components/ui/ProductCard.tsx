@@ -18,21 +18,28 @@ export function ProductCard({ produto, imageFit = "cover" }: ProductCardProps) {
       <div
         className={`relative overflow-hidden bg-fundo-elevado ${
           useContainedImage
-            ? "aspect-[16/10] p-6 sm:p-7 md:p-8"
+            ? "aspect-[16/10]"
             : "aspect-[4/3]"
         }`}
       >
         {produto.imagem ? (
-          <img
-            src={produto.imagem}
-            alt={produto.nome}
-            className={
-              useContainedImage
-                ? "absolute inset-0 h-full w-full object-contain object-center p-6 transition-transform duration-500 group-hover:scale-[1.02] sm:p-7 md:p-8"
-                : "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            }
-            loading="lazy"
-          />
+          useContainedImage ? (
+            <div className="absolute inset-0 p-6 sm:p-7 md:p-8">
+              <img
+                src={produto.imagem}
+                alt={produto.nome}
+                className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <img
+              src={produto.imagem}
+              alt={produto.nome}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          )
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-texto-muted text-sm">
             [Foto: {produto.nomeCurto}]
