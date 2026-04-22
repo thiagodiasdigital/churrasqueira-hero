@@ -10,6 +10,14 @@ interface ProductCarouselProps {
 
 const AUTOPLAY_INTERVAL = 4500;
 
+function getCarouselTitle(nome: string): string {
+  return nome.split(/\s+[–-]\s+/u)[0]?.trim() || nome;
+}
+
+function getCarouselCopy(descricaoCurta: string): string {
+  return descricaoCurta.split("\n\n")[0]?.trim() || descricaoCurta;
+}
+
 export function ProductCarousel({ produtos }: ProductCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -35,7 +43,7 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
 
   return (
     <div
-      className="relative mx-auto max-w-[1120px]"
+      className="relative mx-auto max-w-[1080px]"
       aria-roledescription="carousel"
       aria-label="Churrasqueiras em destaque"
       onMouseEnter={() => setIsPaused(true)}
@@ -82,37 +90,39 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
             >
               <Link
                 href={`/produto/${produto.slug}`}
-                className="grid overflow-hidden rounded-xl border border-ambar-escuro/15 bg-fundo-card shadow-[0_14px_34px_rgba(0,0,0,0.16)] transition-all duration-300 hover:border-ambar/40 hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:min-h-[420px] md:grid-cols-[1fr_340px]"
+                className="group grid overflow-hidden rounded-xl border border-ambar-escuro/15 bg-fundo-card shadow-[0_14px_34px_rgba(0,0,0,0.16)] transition-all duration-300 hover:border-ambar/40 hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:min-h-[320px] md:grid-cols-[minmax(0,1.18fr)_250px]"
               >
-                <div className="flex flex-col justify-center p-5 md:p-10">
+                <div className="flex flex-col justify-center p-5 md:p-7">
                   {produto.badge ? (
                     <span className="inline-flex w-fit rounded-full border border-ambar/20 bg-ambar px-3 py-1 text-xs font-sans font-semibold uppercase tracking-[0.12em] text-fundo">
                       {produto.badge}
                     </span>
                   ) : null}
 
-                  <h3 className="mt-5 font-serif text-2xl font-semibold leading-tight text-texto transition-colors group-hover:text-ambar md:text-[2.15rem]">
-                    {produto.nome}
+                  <h3 className="mt-4 max-w-[14ch] font-serif text-[1.55rem] font-semibold leading-[1.02] text-texto transition-colors group-hover:text-ambar md:text-[1.8rem]">
+                    {getCarouselTitle(produto.nome)}
                   </h3>
 
-                  <p className="mt-5 max-w-[58ch] text-base leading-8 text-texto-secundario md:text-[1.08rem]">
-                    {produto.descricaoCurta}
+                  <p className="mt-4 max-w-[42ch] text-[0.98rem] leading-7 text-texto-secundario line-clamp-3">
+                    {getCarouselCopy(produto.descricaoCurta)}
                   </p>
 
-                  <span className="mt-8 inline-block text-sm font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1">
+                  <span className="mt-6 inline-block text-sm font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1">
                     {produto.cardCtaTexto ?? "Ver detalhes \u2192"}
                   </span>
                 </div>
 
-                <div className="relative flex min-h-[260px] items-center justify-center bg-fundo-elevado p-5 md:min-h-full md:p-8">
+                <div className="relative flex min-h-[240px] items-center justify-center bg-fundo-elevado p-5 md:min-h-full md:p-5">
                   {produto.imagem ? (
-                    <img
-                      src={produto.imagem}
-                      alt={produto.nome}
-                      className="h-full max-h-[320px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.02] md:max-h-[360px]"
-                      style={{ objectPosition: produto.cardImagePosition ?? "center" }}
-                      loading="lazy"
-                    />
+                    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-fundo-card/70 p-4">
+                      <img
+                        src={produto.imagem}
+                        alt={produto.nome}
+                        className="h-auto max-h-[210px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.02] md:max-h-[248px]"
+                        style={{ objectPosition: produto.cardImagePosition ?? "center" }}
+                        loading="lazy"
+                      />
+                    </div>
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-sm text-texto-muted">
                       [Foto: {produto.nomeCurto}]
