@@ -4,6 +4,15 @@ import { createPageMetadata } from "@/lib/metadata";
 import { SchemaScript } from "@/lib/schema";
 import { Section, CTAWhatsApp } from "@/components/ui";
 
+const socialLinks = [
+  { label: "Instagram", href: empresa.instagram },
+  { label: "Pinterest", href: empresa.pinterest },
+  { label: "TikTok", href: empresa.tiktok },
+  { label: "X", href: empresa.x },
+  { label: "Facebook", href: empresa.facebook },
+  { label: "Google Maps", href: empresa.googleBusinessProfile },
+];
+
 export const metadata: Metadata = createPageMetadata({
   title: `Contato — ${empresa.nome} | ${empresa.endereco.cidade}`,
   description: `Entre em contato com a ${empresa.nome}. WhatsApp, endereço e horário de atendimento em ${empresa.endereco.cidade}, ${empresa.endereco.estado}.`,
@@ -58,7 +67,11 @@ export default function ContatoPage() {
               <div className="space-y-2 text-sm text-texto-secundario">
                 <p>Telefone: <a href={`tel:+${empresa.telefoneLimpo}`} className="text-ambar hover:underline">{empresa.telefone}</a></p>
                 <p>E-mail: <a href={`mailto:${empresa.email}`} className="text-ambar hover:underline">{empresa.email}</a></p>
-                <p>Instagram: <a href={empresa.instagram} target="_blank" rel="noopener noreferrer" className="text-ambar hover:underline">{empresa.instagramHandle}</a></p>
+                {socialLinks.map((link) => (
+                  <p key={link.label}>
+                    {link.label}: <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-ambar hover:underline break-all">{link.href}</a>
+                  </p>
+                ))}
               </div>
             </div>
 

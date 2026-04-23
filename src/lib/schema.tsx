@@ -6,6 +6,17 @@
 import { empresa, type Produto, type FAQItem } from "./data";
 import { siteSettings } from "@/lib/site-settings";
 
+function getSameAsLinks() {
+  return [
+    empresa.instagram,
+    empresa.pinterest,
+    empresa.tiktok,
+    empresa.x,
+    empresa.facebook,
+    empresa.googleBusinessProfile,
+  ].filter(Boolean);
+}
+
 export function schemaLocalBusiness(areaServed: string[] | null = null) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -15,6 +26,7 @@ export function schemaLocalBusiness(areaServed: string[] | null = null) {
     url: siteSettings.siteUrl,
     telephone: `+${empresa.telefoneLimpo}`,
     email: empresa.email,
+    sameAs: getSameAsLinks(),
     address: {
       "@type": "PostalAddress",
       streetAddress: empresa.endereco.rua,
@@ -114,6 +126,7 @@ export function schemaOrganization() {
     name: empresa.nome,
     url: siteSettings.siteUrl,
     logo: `${siteSettings.siteUrl}${siteSettings.logoPath}`,
+    sameAs: getSameAsLinks(),
     contactPoint: {
       "@type": "ContactPoint",
       telephone: `+${empresa.telefoneLimpo}`,

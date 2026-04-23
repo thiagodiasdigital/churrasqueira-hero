@@ -18,6 +18,11 @@ export interface Empresa {
   email: string;
   instagram: string;
   instagramHandle: string;
+  pinterest?: string;
+  tiktok?: string;
+  x?: string;
+  facebook?: string;
+  googleBusinessProfile?: string;
   endereco: Endereco;
   horario: string;
   historia: string;

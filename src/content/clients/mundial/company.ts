@@ -10,6 +10,12 @@ export const empresa: Empresa = {
   email: "contato@mundialchurrasqueiras.com.br",
   instagram: "https://www.instagram.com/mundial.churrasqueiras/",
   instagramHandle: "@mundial.churrasqueiras",
+  pinterest: "https://br.pinterest.com/mundialchurrasqueiras/",
+  tiktok: "https://www.tiktok.com/@mundial.churrasqueiras",
+  x: "https://x.com/mchurrasqueiras",
+  facebook: "https://www.facebook.com/profile.php?id=61577279982263&locale=pt_BR",
+  googleBusinessProfile:
+    "https://www.google.com/maps/place/Mundial+Churrasqueiras/@-21.7667709,-43.3696929,664m/data=!3m2!1e3!4b1!4m6!3m5!1s0x989be588888433:0xcd737dfe3deaa05d!8m2!3d-21.7667759!4d-43.367118!16s%2Fg%2F11yb04snxm?hl=pt-BR&authuser=0&entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D",
   endereco: {
     rua: "R. Jose Lourenco Kelmer, 665",
     bairro: "Sao Pedro",
