@@ -42,6 +42,9 @@ export interface Produto {
   badge: string;
   imagem: string;
   cardImagePosition?: string;
+  pageImageFit?: "cover" | "contain";
+  pageImagePosition?: string;
+  pageImageAspectClass?: string;
   cardCtaTexto?: string;
   ctaTexto: string;
   ctaMensagem: string;

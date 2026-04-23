@@ -52,6 +52,9 @@ export default async function ProdutoPage({
       ? schemaService(produto)
       : schemaProduct(produto);
   const schemaFaq = schemaFAQ(produto.faq);
+  const pageImageAspectClass = produto.pageImageAspectClass ?? "aspect-[4/3]";
+  const pageImageFit = produto.pageImageFit ?? "cover";
+  const pageImagePosition = produto.pageImagePosition ?? "center";
 
   return (
     <>
@@ -75,11 +78,18 @@ export default async function ProdutoPage({
 
           <div>
             {produto.imagem ? (
-              <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden">
+              <div
+                className={`${pageImageAspectClass} bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden`}
+              >
                 <img
                   src={produto.imagem}
                   alt={produto.nome}
-                  className="w-full h-full object-cover"
+                  className={
+                    pageImageFit === "contain"
+                      ? "w-full h-full object-contain p-4 md:p-5"
+                      : "w-full h-full object-cover"
+                  }
+                  style={{ objectPosition: pageImagePosition }}
                 />
               </div>
             ) : (

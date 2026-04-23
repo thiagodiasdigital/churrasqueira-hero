@@ -87,6 +87,9 @@ export const produtos: Produto[] = [
     badge: "Potência e Presença no Churrasco",
     imagem: "/images/bafo-preta.png",
     cardImagePosition: "82% center",
+    pageImageFit: "contain",
+    pageImagePosition: "center center",
+    pageImageAspectClass: "aspect-[4/3]",
     cardCtaTexto: "Quero mais potência no meu churrasco →",
     ctaTexto: "Quero mais potência no meu churrasco →",
     ctaMensagem:
