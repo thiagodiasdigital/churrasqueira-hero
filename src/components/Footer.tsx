@@ -2,14 +2,25 @@
 import { empresa, produtos } from "@/lib/data";
 
 export default function Footer() {
-  const featuredLinks = produtos.slice(0, 2).map((produto) => ({
+  const productFooterSlugs = new Set([
+    "churrasqueira-bafo-aluminio",
+    "kit-fogo-de-chao-espeto-braseiro",
+    "churrasqueira-movel-portatil-com-rodas",
+    "churrasqueira-bafo-media-aluminio",
+    "mini-tambor-bafo",
+    "churrasqueira-bafo-ceramica",
+  ]);
+
+  const featuredLinks = produtos
+    .filter((produto) => productFooterSlugs.has(produto.slug))
+    .map((produto) => ({
     href: `/produto/${produto.slug}`,
     label: produto.nomeCurto,
   }));
 
   return (
     <footer className="bg-fundo-card border-t border-ambar-escuro/20 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)_minmax(0,1fr)] gap-8">
         <div>
           <p className="font-serif font-bold text-lg text-texto mb-3">{empresa.nome}</p>
           <p className="text-sm text-texto-secundario leading-relaxed">{empresa.descricao}</p>
@@ -17,7 +28,7 @@ export default function Footer() {
 
         <div>
           <p className="font-serif font-semibold text-sm text-ambar uppercase tracking-wider mb-3">Navegação</p>
-          <nav className="space-y-2">
+          <nav className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
             {[
               { href: "/", label: "Início" },
               ...featuredLinks,
