@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/pre-moldada",
+        destination: "/produto/churrasqueira-pre-moldada",
+        permanent: true,
+      },
+      {
         source: "/produto/carvao-vegetal",
         destination: "/produto/churrasqueira-bafo-aluminio",
         permanent: true,
