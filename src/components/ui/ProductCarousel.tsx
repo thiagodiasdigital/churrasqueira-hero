@@ -90,7 +90,7 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
             >
               <Link
                 href={`/produto/${produto.slug}`}
-                className="group grid overflow-hidden rounded-xl border border-ambar-escuro/15 bg-fundo-card shadow-[0_14px_34px_rgba(0,0,0,0.16)] transition-all duration-300 hover:border-ambar/40 hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:min-h-[320px] md:grid-cols-[minmax(0,1.18fr)_250px]"
+                className="group grid overflow-hidden rounded-xl border border-ambar-escuro/15 bg-fundo-card shadow-[0_14px_34px_rgba(0,0,0,0.16)] transition-all duration-300 hover:border-ambar/40 hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)] md:min-h-[360px] md:grid-cols-[minmax(0,1fr)_320px]"
               >
                 <div className="flex flex-col justify-center p-5 md:p-7">
                   {produto.badge ? (
@@ -108,17 +108,17 @@ export function ProductCarousel({ produtos }: ProductCarouselProps) {
                   </p>
 
                   <span className="mt-6 inline-block text-sm font-sans font-semibold uppercase tracking-[0.12em] text-ambar transition-transform group-hover:translate-x-1">
-                    {produto.cardCtaTexto ?? "Ver detalhes \u2192"}
+                    {produto.cardCtaTexto ?? "Ver detalhes →"}
                   </span>
                 </div>
 
-                <div className="relative flex min-h-[240px] items-center justify-center bg-fundo-elevado p-5 md:min-h-full md:p-5">
+                <div className="relative flex items-center justify-center bg-fundo-elevado p-4 md:p-4">
                   {produto.imagem ? (
-                    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-fundo-card/70 p-4">
+                    <div className="w-full max-w-[288px] overflow-hidden rounded-lg border border-ambar-escuro/10 bg-fundo-card/55 shadow-[0_18px_34px_rgba(0,0,0,0.22)] aspect-[1080/1350]">
                       <img
                         src={produto.imagem}
                         alt={produto.nome}
-                        className="h-auto max-h-[210px] w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.02] md:max-h-[248px]"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                         style={{ objectPosition: produto.cardImagePosition ?? "center" }}
                         loading="lazy"
                       />
