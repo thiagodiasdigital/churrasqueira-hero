@@ -132,7 +132,7 @@ export function PreMoldadasSection() {
           ) : (
             <div className="text-center">
               <p className="text-texto font-serif text-2xl font-medium md:text-4xl">
-                Qual modelo combina com seu espaco?
+                Qual modelo combina com seu espaço?
               </p>
               <a
                 href={`${empresa.whatsapp}?text=${encodeURIComponent(homeContent.preMoldadas.ctaMessage)}`}
@@ -202,7 +202,7 @@ export function PreMoldadasSection() {
 
         <div className="mt-10 text-center">
           <p className="text-texto font-serif text-2xl font-medium leading-snug">
-            Qual modelo combina com seu espaco?
+            Qual modelo combina com seu espaço?
           </p>
           <a
             href={`${empresa.whatsapp}?text=${encodeURIComponent(homeContent.preMoldadas.ctaMessage)}`}
