@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { empresa, regioes } from "@/lib/data";
 import { siteSettings } from "@/lib/site-settings";
+import { createPageMetadata } from "@/lib/metadata";
 import { SchemaScript, schemaOrganization } from "@/lib/schema";
 import { Section, SectionHeading, CTAWhatsApp } from "@/components/ui";
 
@@ -8,10 +9,12 @@ function getPrimaryMetricLabel(value: string) {
   return /ano/i.test(value) ? "Anos de experiência" : "Projetos atendidos";
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: `Sobre a ${empresa.nome} — ${empresa.endereco.cidade}, ${empresa.endereco.estado}`,
   description: `Conheça a ${empresa.nome}. ${empresa.descricao} Nossa história, atuação e diferenciais.`,
-};
+  path: "/sobre",
+  image: `/clients/${siteSettings.clientSlug}/products/projeto-sob-medida.webp`,
+});
 
 export default function SobrePage() {
   return (

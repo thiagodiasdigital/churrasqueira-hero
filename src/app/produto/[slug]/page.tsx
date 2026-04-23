@@ -1,6 +1,7 @@
 ﻿import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { empresa, produtos } from "@/lib/data";
+import { createPageMetadata } from "@/lib/metadata";
 import {
   SchemaScript,
   schemaProduct,
@@ -28,14 +29,12 @@ export async function generateMetadata({
   const produto = produtos.find((p) => p.slug === slug);
   if (!produto) return {};
 
-  return {
+  return createPageMetadata({
     title: produto.title,
     description: produto.metaDescription,
-    openGraph: {
-      title: produto.title,
-      description: produto.metaDescription,
-    },
-  };
+    path: `/produto/${produto.slug}`,
+    image: produto.imagem,
+  });
 }
 
 export default async function ProdutoPage({

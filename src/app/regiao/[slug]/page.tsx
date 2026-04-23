@@ -1,6 +1,7 @@
 ﻿import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { regioes, produtos, empresa } from "@/lib/data";
+import { createPageMetadata } from "@/lib/metadata";
 import { SchemaScript, schemaLocalBusiness, schemaFAQ } from "@/lib/schema";
 import { Section, SectionHeading, ProductCard, CTAWhatsApp, FAQAccordion } from "@/components/ui";
 
@@ -13,10 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const regiao = regioes.find((r) => r.slug === slug);
   if (!regiao) return {};
 
-  return {
-    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e acessorios para churrasco`,
-    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalacao de churrasqueiras pré-moldadas, modelos a bafo e acessorios para churrasco.`,
-  };
+  return createPageMetadata({
+    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e acessórios para churrasco`,
+    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalação de churrasqueiras pré-moldadas, modelos a bafo e acessórios para churrasco.`,
+    path: `/regiao/${regiao.slug}`,
+  });
 }
 
 export default async function RegiaoPage({ params }: { params: Promise<{ slug: string }> }) {

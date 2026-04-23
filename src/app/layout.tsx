@@ -6,26 +6,20 @@ import { empresa } from "@/lib/data";
 import { siteSettings } from "@/lib/site-settings";
 import { siteConfig } from "@/lib/site-config";
 import { getThemeStyle } from "@/lib/site-theme";
+import { createPageMetadata } from "@/lib/metadata";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteSettings.siteUrl),
+  ...createPageMetadata({
+    title: `${empresa.nome} — ${empresa.endereco.cidade}`,
+    description: `${empresa.descricao} Entrega e instalação.`,
+    path: "/",
+  }),
   title: {
     default: `${empresa.nome} — ${empresa.endereco.cidade}`,
     template: `%s | ${empresa.nome}`,
-  },
-  description: `${empresa.descricao} Entrega e instalação.`,
-  openGraph: {
-    title: `${empresa.nome} — ${empresa.endereco.cidade}`,
-    description: empresa.descricao,
-    type: "website",
-    locale: siteSettings.locale,
-    url: siteSettings.siteUrl,
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 

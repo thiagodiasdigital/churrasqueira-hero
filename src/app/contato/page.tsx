@@ -1,12 +1,14 @@
 ﻿import type { Metadata } from "next";
 import { empresa } from "@/lib/data";
+import { createPageMetadata } from "@/lib/metadata";
 import { SchemaScript } from "@/lib/schema";
 import { Section, CTAWhatsApp } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: `Contato — ${empresa.nome} | ${empresa.endereco.cidade}`,
   description: `Entre em contato com a ${empresa.nome}. WhatsApp, endereço e horário de atendimento em ${empresa.endereco.cidade}, ${empresa.endereco.estado}.`,
-};
+  path: "/contato",
+});
 
 const contactSchema = {
   "@context": "https://schema.org",

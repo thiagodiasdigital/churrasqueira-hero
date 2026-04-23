@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { empresa } from "@/lib/data";
 import { CTAWhatsApp } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: `Página não encontrada | ${empresa.nome}`,
+  },
+  description:
+    "A página que você procura não existe ou foi movida. Volte para o início ou fale com a equipe pelo WhatsApp.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (
@@ -10,8 +24,8 @@ export default function NotFound() {
           Página não encontrada
         </h1>
         <p className="text-texto-secundario mb-8 max-w-md mx-auto">
-          A página que você procura não existe ou foi movida.
-          Volte para a página inicial ou fale com a gente pelo WhatsApp.
+          A página que você procura não existe ou foi movida. Volte para a
+          página inicial ou fale com a gente pelo WhatsApp.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
