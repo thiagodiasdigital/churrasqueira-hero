@@ -116,7 +116,7 @@ export interface HomeContent {
     title: string;
     subtitle: string;
   };
-  sobMedida: {
+  sobMedida?: {
     title: string;
     steps: Array<{
       etapa: string;

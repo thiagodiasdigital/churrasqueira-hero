@@ -2,7 +2,6 @@
 import { empresa, produtos, regioes, depoimentos } from "@/lib/data";
 import { PreMoldadasSection } from "@/components/PreMoldadasSection";
 import { homeContent } from "@/content";
-import { siteSettings } from "@/lib/site-settings";
 import {
   Section,
   SectionHeading,
@@ -35,41 +34,6 @@ export default function HomePage() {
         </SectionHeading>
 
         <ProductCarousel produtos={produtosDaSecao} />
-      </Section>
-
-      <Section id="sob-medida" mesh className="bg-fundo-card">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionHeading>{homeContent.sobMedida.title}</SectionHeading>
-            <div className="space-y-6">
-              {homeContent.sobMedida.steps.map((item, i) => (
-                <div key={i} className="flex gap-4">
-                  <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-ambar/10 border border-ambar/30 rounded-lg font-serif font-bold text-ambar text-sm">
-                    {item.etapa}
-                  </span>
-                  <div>
-                    <p className="font-serif font-semibold text-texto">{item.titulo}</p>
-                    <p className="text-sm text-texto-secundario mt-1 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <CTAWhatsApp texto={homeContent.sobMedida.ctaLabel} mensagem={homeContent.sobMedida.ctaMessage} />
-            </div>
-          </div>
-
-          <div>
-            <div className="aspect-[3/4] bg-fundo-elevado rounded-xl border border-ambar-escuro/15 overflow-hidden">
-              <img
-                src={`/clients/${siteSettings.clientSlug}/products/projeto-sob-medida.webp`}
-                alt={homeContent.sobMedida.imageAlt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
       </Section>
 
       <Section id="regioes">

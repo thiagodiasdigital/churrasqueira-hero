@@ -36,34 +36,10 @@ export const homeContent: HomeContent = {
   products: {
     title: "Qual churrasqueira combina com o seu espaço?",
     subtitle:
-      "Do tijolinho clássico ao vidro moderno — veja o que combina com sua área gourmet.",
-  },
-  sobMedida: {
-    title: "Como funciona um projeto de churrasqueira sob medida?",
-    steps: [
-      {
-        etapa: "01",
-        titulo: "Consultoria Técnica",
-        desc: "Avaliação do local, medidas e fluxo de fumaça. Entendemos o espaço antes de propor.",
-      },
-      {
-        etapa: "02",
-        titulo: "Design Exclusivo",
-        desc: "Projeto visual com escolha de acabamentos: vidro, inox, tijolinho ou misto. Você aprova antes de fabricar.",
-      },
-      {
-        etapa: "03",
-        titulo: "Entrega Completa",
-        desc: "Fabricação, entrega e instalação profissional. Da oficina até sua área gourmet pronta.",
-      },
-    ],
-    ctaLabel: "Quero um Projeto Exclusivo",
-    ctaMessage: "Olá! Gostaria de um projeto de churrasqueira sob medida.",
-    imageAlt:
-      "Projeto de churrasqueira sob medida entregue pela Mundial Churrasqueiras",
+      "Do tijolinho clássico ao vidro moderno - veja o que combina com sua área gourmet.",
   },
   regions: {
-    title: "Entrega e instalação em Juiz de Fora e região — onde atendemos?",
+    title: "Entrega e instalação em Juiz de Fora e região - onde atendemos?",
     subtitle:
       "Entregamos e instalamos churrasqueiras em Juiz de Fora e em cidades da Zona da Mata Mineira.",
   },
@@ -73,9 +49,8 @@ export const homeContent: HomeContent = {
   finalCta: {
     title: "Monte sua área gourmet com quem entende",
     description:
-      "Da escolha do modelo até a instalação — a Mundial cuida de tudo para você só se preocupar com o tempero.",
+      "Da escolha do modelo até a instalação - a Mundial cuida de tudo para você só se preocupar com o tempero.",
     ctaLabel: "Falar com Especialista",
     ctaMessage: "Olá! Quero montar minha área gourmet. Pode me ajudar?",
   },
 };
-
