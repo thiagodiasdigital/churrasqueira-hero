@@ -13,7 +13,7 @@ export const homeContent: HomeContent = {
     ctaMessage: "Olá! Quero saber mais sobre as churrasqueiras da Mundial.",
   },
   preMoldadas: {
-    title: "Churrasqueiras Pre-Moldadas",
+    title: "Churrasqueiras Pré-Moldadas",
     introLines: [
       "Prontas para instalar.",
       "Duráveis.",

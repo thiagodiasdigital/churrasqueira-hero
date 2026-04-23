@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e acessorios para churrasco`,
-    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalacao de churrasqueiras pre-moldadas, modelos a bafo e acessorios para churrasco.`,
+    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalacao de churrasqueiras pré-moldadas, modelos a bafo e acessorios para churrasco.`,
   };
 }
 

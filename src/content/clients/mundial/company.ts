@@ -3,7 +3,7 @@ import type { Empresa } from "@/lib/site-types";
 export const empresa: Empresa = {
   nome: "Mundial Churrasqueiras",
   descricao:
-    "Churrasqueiras pre-moldadas e acessorios para churrasco em Juiz de Fora e regiao.",
+    "Churrasqueiras pré-moldadas e acessorios para churrasco em Juiz de Fora e regiao.",
   telefone: "(32) 99902-9461",
   telefoneLimpo: "5532999029461",
   whatsapp: "https://wa.me/5532999029461",
