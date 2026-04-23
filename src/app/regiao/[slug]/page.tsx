@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!regiao) return {};
 
   return {
-    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e projetos sob medida`,
-    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalação de churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco.`,
+    title: `${empresa.nome} em ${regiao.cidade}, ${regiao.estado} | Churrasqueiras e acessorios para churrasco`,
+    description: `${empresa.nome} atende ${regiao.cidade} com entrega e instalacao de churrasqueiras pre-moldadas, modelos a bafo e acessorios para churrasco.`,
   };
 }
 
@@ -53,7 +53,7 @@ export default async function RegiaoPage({ params }: { params: Promise<{ slug: s
         <SectionHeading>Quais opções a {empresa.nome} atende em {regiao.cidade}?</SectionHeading>
         <p className="text-texto-secundario text-base leading-relaxed max-w-3xl mb-8">
           A {empresa.nome} atende {regiao.cidade} com churrasqueiras pré-moldadas, modelos a bafo, opções portáteis,
-          kits fogo de chão, projetos sob medida e acessórios para áreas gourmet residenciais e comerciais.
+          kits fogo de chão e acessórios para áreas gourmet residenciais e comerciais.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {produtosDestaque.map((produto) => (

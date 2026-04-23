@@ -6,7 +6,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "0 km (sede)",
     distanciaNum: 0,
-    descricao: `A Mundial Churrasqueiras tem sede no bairro São Pedro, em Juiz de Fora. Atendemos toda a cidade com entrega e instalação de churrasqueiras pré-moldadas, projetos sob medida e acessórios para churrasco. São mais de 50 avaliações positivas no Google de clientes juiz-foranos satisfeitos.`,
+    descricao: `A Mundial Churrasqueiras tem sede no bairro São Pedro, em Juiz de Fora. Atendemos toda a cidade com entrega e instalação de churrasqueiras pré-moldadas, modelos a bafo e acessórios para churrasco. São mais de 50 avaliações positivas no Google de clientes juiz-foranos satisfeitos.`,
     faq: [
       {
         pergunta:
@@ -30,7 +30,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "21 km",
     distanciaNum: 21,
-    descricao: `Matias Barbosa fica a apenas 21 km de Juiz de Fora, praticamente vizinha à nossa sede. A Mundial Churrasqueiras atende Matias Barbosa com entrega e instalação de churrasqueiras pré-moldadas e projetos sob medida. O frete para a cidade é acessível pela proximidade.`,
+    descricao: `Matias Barbosa fica a apenas 21 km de Juiz de Fora, praticamente vizinha à nossa sede. A Mundial Churrasqueiras atende Matias Barbosa com entrega e instalação de churrasqueiras pré-moldadas, modelos a bafo e acessórios. O frete para a cidade é acessível pela proximidade.`,
     faq: [
       {
         pergunta: "A Mundial Churrasqueiras entrega em Matias Barbosa?",
@@ -52,7 +52,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "40 km",
     distanciaNum: 40,
-    descricao: `Santos Dumont, a terra do pai da aviação, fica a cerca de 40 km de Juiz de Fora. A Mundial Churrasqueiras atende a cidade com entrega de churrasqueiras pré-moldadas, acessórios e projetos sob medida.`,
+    descricao: `Santos Dumont, a terra do pai da aviação, fica a cerca de 40 km de Juiz de Fora. A Mundial Churrasqueiras atende a cidade com entrega de churrasqueiras pré-moldadas, acessórios e modelos a bafo.`,
     faq: [
       {
         pergunta: "A Mundial Churrasqueiras entrega em Santos Dumont?",
@@ -74,7 +74,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "37 km",
     distanciaNum: 37,
-    descricao: `Bicas fica a 37 km de Juiz de Fora e está dentro da área de atendimento da Mundial Churrasqueiras. Entregamos churrasqueiras pré-moldadas, acessórios e realizamos projetos sob medida na cidade.`,
+    descricao: `Bicas fica a 37 km de Juiz de Fora e está dentro da área de atendimento da Mundial Churrasqueiras. Entregamos churrasqueiras pré-moldadas, acessórios e modelos a bafo na cidade.`,
     faq: [
       {
         pergunta: "A Mundial Churrasqueiras entrega em Bicas?",
@@ -96,7 +96,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "68 km",
     distanciaNum: 68,
-    descricao: `Lima Duarte, porta de entrada para o Parque Estadual do Ibitipoca, fica a 68 km de Juiz de Fora. A Mundial Churrasqueiras atende a cidade e a região com entrega de churrasqueiras e projetos sob medida.`,
+    descricao: `Lima Duarte, porta de entrada para o Parque Estadual do Ibitipoca, fica a 68 km de Juiz de Fora. A Mundial Churrasqueiras atende a cidade e a região com entrega de churrasqueiras, modelos a bafo e acessórios.`,
     faq: [
       {
         pergunta: "A Mundial Churrasqueiras entrega em Lima Duarte?",
@@ -140,7 +140,7 @@ export const regioes: Regiao[] = [
     estado: "MG",
     distancia: "98 km",
     distanciaNum: 98,
-    descricao: `Barbacena, a Cidade das Rosas, fica a 98 km de Juiz de Fora. A Mundial Churrasqueiras atende Barbacena com entrega de churrasqueiras pré-moldadas, acessórios e projetos sob medida para residências e áreas gourmet.`,
+    descricao: `Barbacena, a Cidade das Rosas, fica a 98 km de Juiz de Fora. A Mundial Churrasqueiras atende Barbacena com entrega de churrasqueiras pré-moldadas, acessórios e modelos a bafo para residências e áreas gourmet.`,
     faq: [
       {
         pergunta: "A Mundial Churrasqueiras entrega em Barbacena?",

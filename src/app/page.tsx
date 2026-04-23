@@ -16,7 +16,6 @@ export default function HomePage() {
   const showTestimonials = depoimentos.length > 0 && Boolean(homeContent.testimonials.title);
   const produtosExcluidosDaSecao = new Set([
     "churrasqueira-pre-moldada",
-    "churrasqueira-sob-medida",
     "utensilios-churrasco",
   ]);
   const produtosDaSecao = produtos.filter(

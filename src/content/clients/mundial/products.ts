@@ -132,54 +132,6 @@ export const produtos: Produto[] = [
     schema: "Product",
   },
   {
-    slug: "churrasqueira-sob-medida",
-    nome: "Projeto de Churrasqueira Sob Medida",
-    nomeCurto: "Sob Medida",
-    descricaoCurta:
-      "Projeto exclusivo para seu espaço — da consultoria técnica à instalação completa.",
-    descricaoLonga: `Nem todo espaço aceita uma churrasqueira padrão. Varandas com layout irregular, quintais com restrição de fumaça ou áreas gourmet que precisam integrar pia, fogão e churrasqueira pedem um projeto sob medida. A Mundial Churrasqueiras desenvolve projetos exclusivos que aproveitam cada centímetro, com consultoria técnica de fluxo de fumaça, design 3D e instalação completa.`,
-    badge: "100% Personalizado",
-    imagem: "/images/churrasqueira-sob-medida.webp",
-    ctaTexto: "Quero um Projeto Exclusivo",
-    ctaMensagem:
-      "Olá! Gostaria de um projeto de churrasqueira sob medida. Pode me ajudar?",
-    title:
-      "Projeto de Churrasqueira Sob Medida em Juiz de Fora | Mundial",
-    metaDescription:
-      "Projetos exclusivos de churrasqueira sob medida em Juiz de Fora. Consultoria técnica, projeto 3D e instalação completa. Solicite orçamento.",
-    headings: {
-      como: "Como funciona o projeto de churrasqueira sob medida da Mundial?",
-      modelos: "O que inclui o projeto sob medida?",
-      faq: "Perguntas frequentes sobre projetos sob medida",
-    },
-    conteudo: {
-      como: `O processo começa com uma visita técnica ao local. Nossa equipe avalia as dimensões do espaço, o fluxo de fumaça, a posição da saída de dutos e as preferências de acabamento. Com essas informações, desenvolvemos um projeto que maximiza o aproveitamento da área disponível. Você recebe uma visualização antes da fabricação começar.`,
-      modelos: `O projeto sob medida inclui três etapas: consultoria técnica com avaliação do local e fluxo de fumaça, design exclusivo com escolha de acabamentos (vidro, inox, rústico ou misto) e entrega completa com instalação profissional. Trabalhamos com varandas de apartamento, quintais, áreas gourmet integradas e espaços comerciais.`,
-    },
-    especificacoes: [],
-    faq: [
-      {
-        pergunta:
-          "Quanto tempo demora um projeto de churrasqueira sob medida?",
-        resposta: `Do primeiro contato à instalação, o prazo médio é de 15 a 30 dias, dependendo da complexidade do projeto e dos acabamentos escolhidos. A consultoria técnica inicial pode ser agendada em até 48 horas após o contato.`,
-      },
-      {
-        pergunta: "A Mundial faz projeto 3D antes da instalação?",
-        resposta: `Sim. Antes de iniciar a fabricação, você recebe uma visualização do projeto para aprovar medidas, acabamentos e posicionamento. Ajustes podem ser feitos nessa etapa sem custo adicional.`,
-      },
-      {
-        pergunta:
-          "Projeto sob medida funciona para varandas de apartamento?",
-        resposta: `Sim, e é justamente nesses espaços que o projeto sob medida faz mais diferença. Varandas têm limitações de peso, dimensão e exaustão que exigem soluções específicas. A Mundial já instalou churrasqueiras em dezenas de apartamentos em Juiz de Fora.`,
-      },
-      {
-        pergunta: "O que é consultoria de fluxo de fumaça?",
-        resposta: `É a avaliação técnica de como a fumaça vai se comportar no seu espaço. Analisamos a posição da churrasqueira em relação a ventos, aberturas e dutos para garantir que a fumaça saia pelo caminho certo, sem incomodar vizinhos ou retornar ao ambiente.`,
-      },
-    ],
-    schema: "Service",
-  },
-  {
     slug: "utensilios-churrasco",
     nome: "Utensílios de Churrasco",
     nomeCurto: "Utensílios",

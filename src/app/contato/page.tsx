@@ -37,7 +37,7 @@ export default function ContatoPage() {
             <div className="bg-fundo-card border border-ambar-escuro/15 rounded-xl p-6">
               <h2 className="font-serif font-semibold text-lg text-ambar mb-3">WhatsApp</h2>
               <p className="text-texto-secundario text-sm mb-4">
-                A forma mais rápida de falar com a equipe para orçamento, disponibilidade, instalação e projetos sob medida.
+                A forma mais rápida de falar com a equipe para orçamento, disponibilidade, instalação e escolha do melhor modelo.
               </p>
               <CTAWhatsApp texto="Abrir WhatsApp" mensagem="Olá! Quero falar com a Mundial Churrasqueiras sobre orçamento." />
             </div>
