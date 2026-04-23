@@ -45,6 +45,8 @@ export interface Produto {
   pageImageFit?: "cover" | "contain";
   pageImagePosition?: string;
   pageImageAspectClass?: string;
+  pageImagePaddingClass?: string;
+  pageImageScale?: number;
   cardCtaTexto?: string;
   ctaTexto: string;
   ctaMensagem: string;

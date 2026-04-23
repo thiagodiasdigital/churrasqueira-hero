@@ -55,6 +55,8 @@ export default async function ProdutoPage({
   const pageImageAspectClass = produto.pageImageAspectClass ?? "aspect-[4/3]";
   const pageImageFit = produto.pageImageFit ?? "cover";
   const pageImagePosition = produto.pageImagePosition ?? "center";
+  const pageImagePaddingClass = produto.pageImagePaddingClass ?? "p-4 md:p-5";
+  const pageImageScale = produto.pageImageScale ?? 1;
 
   return (
     <>
@@ -86,10 +88,14 @@ export default async function ProdutoPage({
                   alt={produto.nome}
                   className={
                     pageImageFit === "contain"
-                      ? "w-full h-full object-contain p-4 md:p-5"
+                      ? `w-full h-full object-contain ${pageImagePaddingClass}`
                       : "w-full h-full object-cover"
                   }
-                  style={{ objectPosition: pageImagePosition }}
+                  style={{
+                    objectPosition: pageImagePosition,
+                    transform: pageImageScale === 1 ? undefined : `scale(${pageImageScale})`,
+                    transformOrigin: "center",
+                  }}
                 />
               </div>
             ) : (
