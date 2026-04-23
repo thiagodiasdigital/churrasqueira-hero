@@ -92,6 +92,7 @@ export const produtos: Produto[] = [
     pageImageAspectClass: "aspect-[4/5]",
     pageImagePaddingClass: "p-0",
     pageImageScale: 1.12,
+    pageImageWrapperClass: "md:max-w-[420px] lg:max-w-[460px]",
     cardCtaTexto: "Quero mais potência no meu churrasco →",
     ctaTexto: "Quero mais potência no meu churrasco →",
     ctaMensagem:

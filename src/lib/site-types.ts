@@ -47,6 +47,7 @@ export interface Produto {
   pageImageAspectClass?: string;
   pageImagePaddingClass?: string;
   pageImageScale?: number;
+  pageImageWrapperClass?: string;
   cardCtaTexto?: string;
   ctaTexto: string;
   ctaMensagem: string;

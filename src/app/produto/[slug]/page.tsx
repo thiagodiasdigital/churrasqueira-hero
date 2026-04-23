@@ -57,14 +57,15 @@ export default async function ProdutoPage({
   const pageImagePosition = produto.pageImagePosition ?? "center";
   const pageImagePaddingClass = produto.pageImagePaddingClass ?? "p-4 md:p-5";
   const pageImageScale = produto.pageImageScale ?? 1;
+  const pageImageWrapperClass = produto.pageImageWrapperClass ?? "";
 
   return (
     <>
       <SchemaScript schema={schemaMain} />
       <SchemaScript schema={schemaFaq} />
 
-      <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <Section className="py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-start">
           <div>
             <span className="inline-block px-3 py-1 bg-ambar/10 border border-ambar/30 text-ambar text-xs font-sans font-semibold rounded-full mb-4">
               {produto.badge}
@@ -78,10 +79,10 @@ export default async function ProdutoPage({
             <CTAWhatsApp texto={produto.ctaTexto} mensagem={produto.ctaMensagem} />
           </div>
 
-          <div>
+          <div className="md:flex md:justify-end">
             {produto.imagem ? (
               <div
-                className={`${pageImageAspectClass} bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden`}
+                className={`w-full ${pageImageWrapperClass} ${pageImageAspectClass} bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden`}
               >
                 <img
                   src={produto.imagem}
