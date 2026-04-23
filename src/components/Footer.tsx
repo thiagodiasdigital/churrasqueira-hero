@@ -14,13 +14,19 @@ export default function Footer() {
   const featuredLinks = produtos
     .filter((produto) => productFooterSlugs.has(produto.slug))
     .map((produto) => ({
-    href: `/produto/${produto.slug}`,
-    label: produto.nomeCurto,
-  }));
+      href: `/produto/${produto.slug}`,
+      label: produto.nomeCurto,
+    }));
+
+  const institutionalLinks = [
+    { href: "/", label: "Início" },
+    { href: "/sobre", label: "Sobre nós" },
+    { href: "/contato", label: "Contato" },
+  ];
 
   return (
     <footer className="bg-fundo-card border-t border-ambar-escuro/20 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)_minmax(0,1fr)] gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-[minmax(0,1.1fr)_minmax(180px,0.7fr)_minmax(220px,1fr)_minmax(0,1fr)] gap-8">
         <div>
           <p className="font-serif font-bold text-lg text-texto mb-3">{empresa.nome}</p>
           <p className="text-sm text-texto-secundario leading-relaxed">{empresa.descricao}</p>
@@ -28,13 +34,19 @@ export default function Footer() {
 
         <div>
           <p className="font-serif font-semibold text-sm text-ambar uppercase tracking-wider mb-3">Navegação</p>
-          <nav className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-            {[
-              { href: "/", label: "Início" },
-              ...featuredLinks,
-              { href: "/sobre", label: "Sobre nós" },
-              { href: "/contato", label: "Contato" },
-            ].map((link) => (
+          <nav className="space-y-2">
+            {institutionalLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="block text-sm text-texto-secundario hover:text-ambar transition-colors">
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div>
+          <p className="font-serif font-semibold text-sm text-ambar uppercase tracking-wider mb-3">Produtos</p>
+          <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2">
+            {featuredLinks.map((link) => (
               <Link key={link.href} href={link.href} className="block text-sm text-texto-secundario hover:text-ambar transition-colors">
                 {link.label}
               </Link>
