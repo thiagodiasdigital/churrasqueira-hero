@@ -53,9 +53,9 @@ export default async function ProdutoPage({
       : schemaProduct(produto);
   const schemaFaq = schemaFAQ(produto.faq);
   const pageImageAspectClass = produto.pageImageAspectClass ?? "aspect-[4/3]";
-  const pageImageFit = produto.pageImageFit ?? "cover";
+  const pageImageFit = produto.pageImageFit ?? "contain";
   const pageImagePosition = produto.pageImagePosition ?? "center";
-  const pageImagePaddingClass = produto.pageImagePaddingClass ?? "p-4 md:p-5";
+  const pageImagePaddingClass = produto.pageImagePaddingClass ?? "p-3 md:p-4";
   const pageImageScale = produto.pageImageScale ?? 1;
   const pageImageWrapperClass = produto.pageImageWrapperClass ?? "";
 
