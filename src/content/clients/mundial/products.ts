@@ -175,7 +175,7 @@ export const produtos: Produto[] = [
     schema: "Product",
   },
   {
-    slug: "carvao-vegetal",
+    slug: "churrasqueira-bafo-aluminio",
     nome: "Churrasqueira a Bafo em Alumínio – Praticidade com Resultado Profissional",
     nomeCurto: "Bafo Alumínio",
     descricaoCurta:
@@ -224,7 +224,7 @@ export const produtos: Produto[] = [
     schema: "Product",
   },
   {
-    slug: "kit-fogo-de-chao",
+    slug: "kit-fogo-de-chao-espeto-braseiro",
     nome: "Kit Fogo de Chão com Espeto + Braseiro – Tradição e Presença no Churrasco",
     nomeCurto: "Fogo de Chão",
     descricaoCurta:
@@ -268,7 +268,7 @@ export const produtos: Produto[] = [
     schema: "Product",
   },
   {
-    slug: "churrasqueira-movel-portatil",
+    slug: "churrasqueira-movel-portatil-com-rodas",
     nome: "Churrasqueira Móvel Portátil com Rodas – Mais Liberdade no Seu Churrasco",
     nomeCurto: "Móvel Portátil",
     descricaoCurta:
@@ -312,9 +312,9 @@ export const produtos: Produto[] = [
     schema: "Product",
   },
   {
-    slug: "churrasqueira-bafo",
+    slug: "churrasqueira-bafo-media-aluminio",
     nome: "Churrasqueira a Bafo Média em Alumínio – Mais Espaço, Mesmo Controle",
-    nomeCurto: "Bafo Alumínio",
+    nomeCurto: "Bafo Média",
     descricaoCurta:
       "Mais espaço para preparar tudo de uma vez, sem perder o controle do calor. Com estrutura em alumínio fundido e sistema a bafo, você garante carne suculenta, assada por igual e com sabor intenso.\n\nPerfeita para reunir família e amigos com praticidade e resultado profissional.",
     descricaoLonga: `Mais espaço para preparar tudo de uma vez, sem perder o controle do calor. Com estrutura em alumínio fundido e sistema a bafo, você garante carne suculenta, assada por igual e com sabor intenso. Perfeita para reunir família e amigos com praticidade e resultado profissional.`,
@@ -326,37 +326,37 @@ export const produtos: Produto[] = [
     ctaMensagem:
       "Olá, quero elevar meu churrasco com a churrasqueira a bafo média em alumínio. Pode me ajudar?",
     title:
-      "Churrasqueira Bafo em Juiz de Fora — Barro e Tambor | Mundial Churrasqueiras",
+      "Churrasqueira a Bafo Média em Alumínio em Juiz de Fora | Mundial",
     metaDescription:
-      "Churrasqueira bafo em barro artesanal e tambor metálico em Juiz de Fora. Sabor defumado autêntico. Entrega e instalação. Mundial Churrasqueiras.",
+      "Churrasqueira a bafo média em alumínio fundido em Juiz de Fora. Mais espaço, controle de calor e resultado profissional para reunir família e amigos.",
     headings: {
-      como: "O que é churrasqueira bafo e como funciona?",
-      modelos: "Quais modelos de churrasqueira bafo a Mundial oferece?",
-      faq: "Perguntas frequentes sobre churrasqueira bafo",
+      como: "Por que escolher uma churrasqueira a bafo média em alumínio?",
+      modelos: "Para quem esse modelo é indicado?",
+      faq: "Perguntas frequentes sobre churrasqueira a bafo média em alumínio",
     },
     conteudo: {
-      como: `A churrasqueira bafo funciona com o princípio da tampa fechada: a carne é colocada sobre a brasa e a tampa retém o calor e a fumaça dentro da câmara. Isso cria um efeito de defumação natural que dá sabor único à carne, sem precisar de chips de madeira ou aditivos. O cozimento é mais lento que na churrasqueira aberta, mas o resultado é carne macia, suculenta e com sabor defumado.`,
-      modelos: `A Mundial oferece dois tipos de churrasqueira bafo: o modelo em barro artesanal, com formato arredondado e visual rústico, ideal para quem valoriza a tradição; e o modelo em tambor metálico com chaminé inox, mais compacto e prático para espaços menores ou para quem quer mobilidade.`,
+      como: `A churrasqueira a bafo média em alumínio é uma escolha equilibrada para quem quer mais área de preparo sem perder praticidade. A tampa ajuda a reter calor e fumaça, favorecendo carne mais suculenta, preparo uniforme e controle mais previsível do churrasco.`,
+      modelos: `Esse modelo é indicado para quem reúne família e amigos com frequência e quer um equipamento resistente, eficiente e com espaço suficiente para assar mais itens ao mesmo tempo, sem abrir mão do formato compacto em alumínio fundido.`,
     },
     especificacoes: [],
     faq: [
       {
-        pergunta: "Qual a diferença entre churrasqueira bafo de barro e de tambor?",
-        resposta: `O bafo de barro retém mais calor por mais tempo, ideal para cozimentos longos e carnes maiores. O tambor metálico aquece mais rápido e é mais leve, facilitando o transporte. Ambos produzem o sabor defumado característico.`,
+        pergunta: "Qual a vantagem da churrasqueira a bafo média em alumínio?",
+        resposta: `Ela oferece mais espaço de preparo sem perder praticidade. O alumínio fundido ajuda na durabilidade, enquanto o sistema a bafo favorece carne mais suculenta e assada por igual.`,
       },
       {
-        pergunta: "Churrasqueira bafo serve para fazer costela?",
-        resposta: `Sim, e é uma das melhores opções. A costela no bafo fica cozinhando lentamente na fumaça por horas, resultando em carne que desfia no garfo. Muitos churrasqueiros consideram o bafo o melhor método para costela.`,
+        pergunta: "Esse modelo é bom para reunir família e amigos?",
+        resposta: `Sim. O diferencial da versão média é justamente oferecer mais área útil para preparar carnes e acompanhamentos ao mesmo tempo, atendendo melhor encontros com mais pessoas.`,
       },
       {
-        pergunta: "A churrasqueira bafo faz muita fumaça?",
-        resposta: `Menos que a churrasqueira aberta. Como a tampa fica fechada, a fumaça é contida dentro da câmara e absorvida pela carne. A saída de fumaça é controlada pela chaminé. É uma boa opção para espaços semi-cobertos.`,
+        pergunta: "O alumínio fundido ajuda no dia a dia?",
+        resposta: `Sim. O alumínio fundido combina resistência, boa retenção de calor e praticidade no uso, sendo uma opção durável para quem quer churrasco frequente com controle mais estável.`,
       },
     ],
     schema: "Product",
   },
   {
-    slug: "churrasqueira-portatil",
+    slug: "mini-tambor-bafo",
     nome: "Mini Tambor a Bafo – Churrasco de Verdade em Qualquer Lugar",
     nomeCurto: "Mini Tambor",
     descricaoCurta:
@@ -370,31 +370,31 @@ export const produtos: Produto[] = [
     ctaMensagem:
       "Olá, gostaria de garantir a Mini Tambor a Bafo. Pode me ajudar?",
     title:
-      "Churrasqueira Portátil em Juiz de Fora — Compacta e Dobrável | Mundial",
+      "Mini Tambor a Bafo em Juiz de Fora | Mundial",
     metaDescription:
-      "Churrasqueira portátil com pé dobrável em Juiz de Fora. Modelos compactos em aço galvanizado. Fácil de transportar. Mundial Churrasqueiras.",
+      "Mini tambor a bafo em Juiz de Fora. Compacto, potente e ideal para quem quer controle de calor e sabor defumado em espaços menores.",
     headings: {
-      como: "Quando escolher uma churrasqueira portátil?",
-      modelos: "Quais modelos de churrasqueira portátil a Mundial oferece?",
-      faq: "Perguntas frequentes sobre churrasqueira portátil",
+      como: "Por que escolher uma mini tambor a bafo?",
+      modelos: "Para quem esse modelo é indicado?",
+      faq: "Perguntas frequentes sobre mini tambor a bafo",
     },
     conteudo: {
-      como: `A churrasqueira portátil é ideal para três situações: espaços pequenos onde uma pré-moldada não cabe, uso em locais externos como sítios e acampamentos, ou como segunda churrasqueira para uso rápido no dia a dia. O material é aço galvanizado ou esmaltado, resistente ao calor e à oxidação. Os pés dobráveis permitem guardar em pouco espaço.`,
-      modelos: `A linha portátil da Mundial inclui: modelo compacto sem pé (para apoiar em mesas), modelo com pé alto e grelha dupla, modelo tipo balanço com tampa articulada e modelo redondo esmaltado com rodinhas. Todos com grelha removível para facilitar a limpeza.`,
+      como: `A mini tambor a bafo é indicada para quem quer um equipamento compacto, mas com controle real de calor e sabor. O sistema a bafo ajuda a manter a temperatura estável e favorece carnes mais suculentas mesmo em churrascos feitos em áreas menores.`,
+      modelos: `Esse modelo atende quem busca praticidade, mobilidade e um churrasco bem feito sem depender de uma estrutura grande. É uma ótima opção para espaços compactos, uso rápido no dia a dia e encontros menores.`,
     },
     especificacoes: [],
     faq: [
       {
-        pergunta: "Churrasqueira portátil serve para quantas pessoas?",
-        resposta: `Depende do modelo. Os modelos compactos atendem de 2 a 4 pessoas. Os modelos com pé alto e grelha maior servem de 6 a 8 pessoas confortavelmente.`,
+        pergunta: "A mini tambor a bafo é indicada para espaços pequenos?",
+        resposta: `Sim. A proposta desse modelo é entregar um churrasco de verdade com estrutura compacta, facilitando o uso em áreas menores sem perder controle de calor.`,
       },
       {
-        pergunta: "A churrasqueira portátil é boa para apartamento?",
-        resposta: `Sim, os modelos compactos são muito usados em varandas de apartamento. A vantagem é que podem ser guardados após o uso, liberando espaço. Lembre-se de usar em área ventilada.`,
+        pergunta: "O sistema a bafo faz diferença nesse tamanho?",
+        resposta: `Sim. Mesmo em um equipamento compacto, a tampa e a saída de fumaça ajudam a controlar o calor e reforçam o sabor defumado do churrasco.`,
       },
       {
-        pergunta: "Churrasqueira portátil enferruja?",
-        resposta: `Os modelos da Mundial são em aço galvanizado ou esmaltado, que resistem à oxidação. Com cuidado básico — limpar após o uso e guardar em local coberto — duram anos sem enferrujar.`,
+        pergunta: "Esse modelo é bom para uso rápido no dia a dia?",
+        resposta: `Sim. A mini tambor a bafo é uma boa escolha para quem quer praticidade e não abre mão de um preparo bem feito mesmo em churrascos menores.`,
       },
     ],
     schema: "Product",
