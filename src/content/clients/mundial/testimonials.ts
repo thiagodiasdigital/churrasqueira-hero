@@ -1,4 +1,5 @@
-﻿import type { Depoimento } from "@/lib/site-types";
+import type { Depoimento } from "@/lib/site-types";
+
 export const depoimentos: Depoimento[] = [
   {
     nome: "Pedra Cor",
@@ -6,21 +7,21 @@ export const depoimentos: Depoimento[] = [
       "Excelente atendimento e produtos variados de alta qualidade. Muito top. Recomendo.",
   },
   {
-    nome: "T?nia Baptista",
+    nome: "Tânia Baptista",
     texto:
-      "Gostei muito do atendimento e principalmente do servi?o. Pontual na entrega. Recomendo.",
+      "Gostei muito do atendimento e principalmente do serviço. Pontual na entrega. Recomendo.",
   },
   {
     nome: "Sinara Dias Silva",
-    texto: "Churrasqueira pr?-moldada em Juiz de Fora n?o existe melhor!",
+    texto: "Churrasqueira pré-moldada em Juiz de Fora não existe melhor!",
   },
   {
-    nome: "Jo?o Paulo Barreto",
-    texto: "?timo atendimento, qualidade, profissionalismo nota 1000, super indico.",
+    nome: "João Paulo Barreto",
+    texto: "Ótimo atendimento, qualidade, profissionalismo nota 1000, super indico.",
   },
   {
     nome: "Vitrine Kids",
     texto:
-      "Fui muito bem atendido, tive uma ?tima explica??o dos materiais. Recomendo muito, nota dez para essa equipe.",
+      "Fui muito bem atendido, tive uma ótima explicação dos materiais. Recomendo muito, nota dez para essa equipe.",
   },
 ];

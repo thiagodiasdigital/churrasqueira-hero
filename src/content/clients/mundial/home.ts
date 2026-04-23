@@ -16,13 +16,13 @@ export const homeContent: HomeContent = {
     title: "Churrasqueiras Pre-Moldadas",
     introLines: [
       "Prontas para instalar.",
-      "Duraveis.",
-      "Acabamento impecavel.",
+      "Duráveis.",
+      "Acabamento impecável.",
     ],
     models: [
       { nome: "COLONIAL BABY 45cm", imagem: preBaby },
       { nome: "BABY MINI 45cm", imagem: preBabyMini },
-      { nome: "COLONIAL COM BALCAO 45cm", imagem: preBalcao },
+      { nome: "COLONIAL COM BALCÃO 45cm", imagem: preBalcao },
       { nome: "PREDIAL 65cm", imagem: prePredial },
       {
         nome: "COLONIAL 55cm",
@@ -30,7 +30,7 @@ export const homeContent: HomeContent = {
         imagem: preTradicional,
       },
     ],
-    ctaLabel: "Receber orientacao",
+    ctaLabel: "Receber orientação",
     ctaMessage: "Olá! Quero receber orientação sobre churrasqueiras pré-moldadas.",
   },
   products: {
