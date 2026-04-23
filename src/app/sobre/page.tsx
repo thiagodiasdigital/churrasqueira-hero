@@ -1,8 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { empresa, regioes } from "@/lib/data";
-import { siteSettings } from "@/lib/site-settings";
 import { createPageMetadata } from "@/lib/metadata";
-import { SchemaScript, schemaOrganization } from "@/lib/schema";
+import { SchemaScript, schemaBreadcrumb, schemaOrganization } from "@/lib/schema";
 import { Section, SectionHeading, CTAWhatsApp } from "@/components/ui";
 
 function getPrimaryMetricLabel(value: string) {
@@ -13,13 +12,19 @@ export const metadata: Metadata = createPageMetadata({
   title: `Sobre a ${empresa.nome} — ${empresa.endereco.cidade}, ${empresa.endereco.estado}`,
   description: `Conheça a ${empresa.nome}. ${empresa.descricao} Nossa história, atuação e diferenciais.`,
   path: "/sobre",
-  image: `/clients/${siteSettings.clientSlug}/products/projeto-sob-medida.webp`,
+  image: "/images/churrasqueira-pre-moldada.webp",
 });
 
 export default function SobrePage() {
+  const breadcrumbSchema = schemaBreadcrumb([
+    { name: "Início", path: "/" },
+    { name: "Sobre", path: "/sobre" },
+  ]);
+
   return (
     <>
       <SchemaScript schema={schemaOrganization()} />
+      <SchemaScript schema={breadcrumbSchema} />
 
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -33,8 +38,8 @@ export default function SobrePage() {
           <div>
             <div className="aspect-[4/3] bg-fundo-card border border-ambar-escuro/15 rounded-xl overflow-hidden">
               <img
-                src={`/clients/${siteSettings.clientSlug}/products/projeto-sob-medida.webp`}
-                alt={`Atendimento realizado pela equipe da ${empresa.nome}`}
+                src="/images/churrasqueira-pre-moldada.webp"
+                alt={`Churrasqueira pré-moldada da ${empresa.nome}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

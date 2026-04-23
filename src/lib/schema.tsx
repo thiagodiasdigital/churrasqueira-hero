@@ -17,6 +17,11 @@ function getSameAsLinks() {
   ].filter(Boolean);
 }
 
+type BreadcrumbItem = {
+  name: string;
+  path: string;
+};
+
 export function schemaLocalBusiness(areaServed: string[] | null = null) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -141,6 +146,19 @@ export function schemaOrganization() {
       postalCode: empresa.endereco.cep,
       addressCountry: "BR",
     },
+  };
+}
+
+export function schemaBreadcrumb(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteSettings.siteUrl}${item.path}`,
+    })),
   };
 }
 

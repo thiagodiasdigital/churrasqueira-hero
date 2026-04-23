@@ -4,6 +4,17 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.mundialchurrasqueiras.com.br",
+          },
+        ],
+        destination: "https://mundialchurrasqueiras.com.br/:path*",
+        permanent: true,
+      },
+      {
         source: "/pre-moldada",
         destination: "/produto/churrasqueira-pre-moldada",
         permanent: true,

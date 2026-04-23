@@ -4,6 +4,7 @@ import { empresa, produtos } from "@/lib/data";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   SchemaScript,
+  schemaBreadcrumb,
   schemaProduct,
   schemaService,
   schemaFAQ,
@@ -51,6 +52,11 @@ export default async function ProdutoPage({
       ? schemaService(produto)
       : schemaProduct(produto);
   const schemaFaq = schemaFAQ(produto.faq);
+  const breadcrumbSchema = schemaBreadcrumb([
+    { name: "Início", path: "/" },
+    { name: "Produtos", path: "/" },
+    { name: produto.nomeCurto, path: `/produto/${produto.slug}` },
+  ]);
   const pageImageAspectClass = produto.pageImageAspectClass ?? "aspect-[4/3]";
   const pageImageFit = produto.pageImageFit ?? "contain";
   const pageImagePosition = produto.pageImagePosition ?? "center";
@@ -62,6 +68,7 @@ export default async function ProdutoPage({
     <>
       <SchemaScript schema={schemaMain} />
       <SchemaScript schema={schemaFaq} />
+      <SchemaScript schema={breadcrumbSchema} />
 
       <Section className="py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-start">

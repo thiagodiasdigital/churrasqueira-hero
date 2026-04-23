@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   },
   description:
     "A página que você procura não existe ou foi movida. Volte para o início ou fale com a equipe pelo WhatsApp.",
+  alternates: {
+    canonical: "/404",
+  },
+  openGraph: {
+    title: `Página não encontrada | ${empresa.nome}`,
+    description:
+      "A página que você procura não existe ou foi movida. Volte para o início ou fale com a equipe pelo WhatsApp.",
+    url: "/404",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: `Página não encontrada | ${empresa.nome}`,
+    description:
+      "A página que você procura não existe ou foi movida. Volte para o início ou fale com a equipe pelo WhatsApp.",
+  },
   robots: {
     index: false,
     follow: false,

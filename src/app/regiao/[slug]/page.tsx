@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { regioes, produtos, empresa } from "@/lib/data";
 import { createPageMetadata } from "@/lib/metadata";
-import { SchemaScript, schemaLocalBusiness, schemaFAQ } from "@/lib/schema";
+import { SchemaScript, schemaBreadcrumb, schemaLocalBusiness, schemaFAQ } from "@/lib/schema";
 import { Section, SectionHeading, ProductCard, CTAWhatsApp, FAQAccordion } from "@/components/ui";
 
 export function generateStaticParams() {
@@ -28,12 +28,18 @@ export default async function RegiaoPage({ params }: { params: Promise<{ slug: s
 
   const localSchema = schemaLocalBusiness([regiao.cidade]);
   const faqSchema = schemaFAQ(regiao.faq);
+  const breadcrumbSchema = schemaBreadcrumb([
+    { name: "Início", path: "/" },
+    { name: "Regiões", path: "/" },
+    { name: regiao.cidade, path: `/regiao/${regiao.slug}` },
+  ]);
   const produtosDestaque = produtos.slice(0, 3);
 
   return (
     <>
       <SchemaScript schema={localSchema} />
       <SchemaScript schema={faqSchema} />
+      <SchemaScript schema={breadcrumbSchema} />
 
       <Section>
         <div className="max-w-3xl">

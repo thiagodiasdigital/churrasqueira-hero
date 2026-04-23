@@ -1,7 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { empresa } from "@/lib/data";
 import { createPageMetadata } from "@/lib/metadata";
-import { SchemaScript } from "@/lib/schema";
+import { SchemaScript, schemaBreadcrumb } from "@/lib/schema";
 import { Section, CTAWhatsApp } from "@/components/ui";
 
 const socialLinks = [
@@ -30,10 +30,15 @@ const contactSchema = {
 
 export default function ContatoPage() {
   const hasMap = empresa.endereco.lat !== 0 && empresa.endereco.lng !== 0;
+  const breadcrumbSchema = schemaBreadcrumb([
+    { name: "Início", path: "/" },
+    { name: "Contato", path: "/contato" },
+  ]);
 
   return (
     <>
       <SchemaScript schema={contactSchema} />
+      <SchemaScript schema={breadcrumbSchema} />
 
       <Section>
         <h1 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl text-texto leading-tight mb-6">

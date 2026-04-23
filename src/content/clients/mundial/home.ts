@@ -31,15 +31,16 @@ export const homeContent: HomeContent = {
       },
     ],
     ctaLabel: "Receber orientação",
-    ctaMessage: "Olá! Quero receber orientação sobre churrasqueiras pré-moldadas.",
+    ctaMessage:
+      "Olá! Quero receber orientação sobre churrasqueiras pré-moldadas.",
   },
   products: {
     title: "Qual churrasqueira combina com o seu espaço?",
     subtitle:
-      "Do tijolinho clássico ao vidro moderno - veja o que combina com sua área gourmet.",
+      "Do tijolinho clássico ao vidro moderno, veja o que combina com sua área gourmet.",
   },
   regions: {
-    title: "Entrega e instalação em Juiz de Fora e região - onde atendemos?",
+    title: "Entrega e instalação em Juiz de Fora e região: onde atendemos?",
     subtitle:
       "Entregamos e instalamos churrasqueiras em Juiz de Fora e em cidades da Zona da Mata Mineira.",
   },
@@ -49,7 +50,7 @@ export const homeContent: HomeContent = {
   finalCta: {
     title: "Monte sua área gourmet com quem entende",
     description:
-      "Da escolha do modelo até a instalação - a Mundial cuida de tudo para você só se preocupar com o tempero.",
+      "Da escolha do modelo até a instalação, a Mundial cuida de tudo para você só se preocupar com o tempero.",
     ctaLabel: "Falar com Especialista",
     ctaMessage: "Olá! Quero montar minha área gourmet. Pode me ajudar?",
   },
