@@ -57,7 +57,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-texto-muted">
           <p>&copy; {new Date().getFullYear()} {empresa.nome}</p>
           <p>
-            Powered by <a href="https://www.instagram.com/agenciadiasdigital/" target="_blank" rel="noopener noreferrer" className="hover:text-ambar transition-colors">Agência Dias Digital</a>
+            Powered by <a href="https://agenciadiasdigital.com.br/" target="_blank" rel="noopener noreferrer" className="hover:text-ambar transition-colors">Agência Dias Digital</a>
           </p>
         </div>
       </div>
