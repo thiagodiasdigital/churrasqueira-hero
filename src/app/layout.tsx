@@ -3,15 +3,14 @@ import { bebas, montserrat } from "@/styles/fonts";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { SchemaScript, schemaLocalBusiness } from "@/lib/schema";
 import { empresa } from "@/lib/data";
-import { siteSettings } from "@/lib/site-settings";
 import { siteConfig } from "@/lib/site-config";
 import { getThemeStyle } from "@/lib/site-theme";
-import { createPageMetadata } from "@/lib/metadata";
+import { canonicalSiteUrl, createPageMetadata } from "@/lib/metadata";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteSettings.siteUrl),
+  metadataBase: new URL(canonicalSiteUrl),
   ...createPageMetadata({
     title: `${empresa.nome} — ${empresa.endereco.cidade}`,
     description: `${empresa.descricao} Entrega e instalação.`,

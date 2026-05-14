@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const PERMANENT_REDIRECT_STATUS = 301;
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
@@ -12,37 +14,37 @@ const nextConfig: NextConfig = {
           },
         ],
         destination: "https://mundialchurrasqueiras.com.br/:path*",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/pre-moldada",
         destination: "/produto/churrasqueira-pre-moldada",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/produto/carvao-vegetal",
         destination: "/produto/churrasqueira-bafo-aluminio",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/produto/kit-fogo-de-chao",
         destination: "/produto/kit-fogo-de-chao-espeto-braseiro",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/produto/churrasqueira-movel-portatil",
         destination: "/produto/churrasqueira-movel-portatil-com-rodas",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/produto/churrasqueira-bafo",
         destination: "/produto/churrasqueira-bafo-media-aluminio",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
         source: "/produto/churrasqueira-portatil",
         destination: "/produto/mini-tambor-bafo",
-        permanent: true,
+        statusCode: PERMANENT_REDIRECT_STATUS,
       },
     ];
   },

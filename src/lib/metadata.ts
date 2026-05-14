@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { siteSettings } from "@/lib/site-settings";
 
+export const canonicalSiteUrl = siteSettings.siteUrl.replace(/\/$/, "");
+
 type PageMetadataInput = {
   title: string;
   description: string;
@@ -9,16 +11,12 @@ type PageMetadataInput = {
   noIndex?: boolean;
 };
 
-function getSiteUrl() {
-  return siteSettings.siteUrl.replace(/\/$/, "");
-}
-
 export function absoluteUrl(path = "/") {
   if (/^https?:\/\//i.test(path)) {
     return path;
   }
 
-  return new URL(path, `${getSiteUrl()}/`).toString();
+  return new URL(path, `${canonicalSiteUrl}/`).toString();
 }
 
 export function createPageMetadata({
