@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         statusCode: PERMANENT_REDIRECT_STATUS,
       },
       {
+        source: "/home",
+        destination: "/",
+        statusCode: PERMANENT_REDIRECT_STATUS,
+      },
+      {
+        source: "/author/mundialchurrasqueiras",
+        destination: "/sobre",
+        statusCode: PERMANENT_REDIRECT_STATUS,
+      },
+      {
         source: "/pre-moldada",
         destination: "/produto/churrasqueira-pre-moldada",
         statusCode: PERMANENT_REDIRECT_STATUS,
